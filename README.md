@@ -22,9 +22,9 @@
 
 
 * Choose your own tech stack - but we **strongly** encourage full stack with Java on the back-end. 
- - Likely to use React, java, mongodb. Could try streams? (Parallel streams)? filter, reduce, limit on api stuff. could add in stadium entry, make map easier.
+ - Likely to use React, java, mongodb. Could try streams? (Parallel streams)? filter, reduce, limit on api stuff. could add in stadium entry, make making a map easier?
 
-* We heavily encourage 3rd party libraries of all kinds for JS or Java - you choose. Explore some ideas - we're **really** keen to see what you find. If you do, it makes a great topic for the presentation. Examples include ( see "awesome" lists below for even more inspiration )
+* We heavily encourage 3rd party libraries of all kinds for JS or Java - you choose. Explore some ideas - we're **really** keen to see what you find. If you do, it makes a great topic for the presentation.
  - Found these that may help in the exploration ideas:
 * Material-ui
 * React-grids?
@@ -35,7 +35,9 @@
 
 ## SGNN News / Pitch notes
 
-What'**s** **G**oi**n**' O**n** News have asked you to build a web application to allow them to upload the latest ~~Scottish~~ football news.
+What'**s** **G**oi**n**' O**n** News have asked you to build a web application to allow them to upload the latest ~~Scottish~~ ⚽️ **FOOTBALL** ⚽️ news.
+
+## MVP
 
 They want to be able to:
 
