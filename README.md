@@ -1,4 +1,4 @@
-# Final Project - project-brief-idea Pitch notes
+# Final Project - project-brief - Pitch notes
 
 
 * Send the instructors your repo' links!
@@ -42,7 +42,7 @@ For the front end of the website, users should be able to:
 
 ## Project Extensions
 
-- use the data at api.football-data.org to fill the scores, table team info with real info (use an external API, but only if you pull the data into your own back-end and use it from there.)
+- use the data at api.football-data.org (provides Serie A, Bundesliga, La Liga, Ligue 1, Eredivise and Premier League) to fill the scores, table team info with real info (use an external API, but only if you pull the data into your own back-end and use it from there.)
 - Search for articles where the title includes a particular search term
 - Filter articles by journalist
 - Filter articles by category, which can be added by SGNN
