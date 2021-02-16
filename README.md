@@ -1,31 +1,17 @@
-# project-brief-idea-pitch
-
-# Final Project
-
-## Brief
+# Final Project - project-brief-idea Pitch notes
 
 
-* Start working on your projects on Wednesday
 * Send the instructors your repo' links!
 * Work until Wednesday or Thursday (if you dare - just make sure it works for the pres' 😉 )
 * Presentations on Thursday morning - **please send us your song**
-* Team retros on Thursday afternoon - you're running these
-* Choose your own team - no bigger than 4 + **no repeated teams from previous projects**
-* Solo is an option - by all means
+* Team retros on Thursday afternoon
+
+## Rules -Tech
 
 
+Choose your own tech stack - Likely to use React, java, mongodb.
 
-## Rules
-
-
-### Tech
-
-
-* Choose your own tech stack - but we **strongly** encourage full stack with Java on the back-end. 
- - Likely to use React, java, mongodb. Could try streams? (Parallel streams)? filter, reduce, limit on api stuff. could add in stadium entry, make making a map easier?
-
-* We heavily encourage 3rd party libraries of all kinds for JS or Java - you choose. Explore some ideas - we're **really** keen to see what you find. If you do, it makes a great topic for the presentation.
- - Found these that may help in the exploration ideas:
+Use some 3rd party libraries - found these that may help in the exploration ideas:
 * Material-ui
 * React-grids?
 * React-geo  / pigeon maps  / google-map-react / react-mapbox / react-maps
@@ -56,7 +42,7 @@ For the front end of the website, users should be able to:
 
 ## Project Extensions
 
-- use the data at api.football-data.org to fill the scores, table team info with real info (You can use an external API but only if you pull the data into your own back-end and use it from there.)
+- use the data at api.football-data.org to fill the scores, table team info with real info (use an external API, but only if you pull the data into your own back-end and use it from there.)
 - Search for articles where the title includes a particular search term
 - Filter articles by journalist
 - Filter articles by category, which can be added by SGNN
