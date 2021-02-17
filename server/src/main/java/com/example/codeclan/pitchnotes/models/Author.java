@@ -3,6 +3,7 @@ package com.example.codeclan.pitchnotes.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -18,9 +19,9 @@ public class Author {
     @OneToMany(mappedBy = "author")
     private List<Article> articles;
 
-    public Author(String name, List<Article> articles) {
+    public Author(String name) {
         this.name = name;
-        this.articles = articles;
+        this.articles = new ArrayList<>();
     }
 
     public Author() {
