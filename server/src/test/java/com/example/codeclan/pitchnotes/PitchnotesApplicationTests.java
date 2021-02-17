@@ -22,7 +22,7 @@ class PitchnotesApplicationTests {
 
 	@Test
 	public void canCreateSaveAuthorToDb(){
-		Author author = new Author("Mark R" );
-		authorRepository.save(author);
+		Author mark = new Author("Mark Richardson" );
+		authorRepository.save(mark);
 	}
 }
