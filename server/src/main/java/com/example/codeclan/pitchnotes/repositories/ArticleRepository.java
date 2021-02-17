@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface ArticleRepository extends JpaRepository<Article, Long> {
-    List<Article> findByAuthorNameIgnoreCase(String authorName);
+    List<Article> findByAuthorNameIgnoreCase(String name);
     List<Article> findByDateIgnoreCase(String date);
     List<Article> findByCategoryLeagueIgnoreCase(String categoryLeague);
 

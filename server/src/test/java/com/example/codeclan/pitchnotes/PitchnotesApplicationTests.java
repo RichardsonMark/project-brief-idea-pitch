@@ -56,4 +56,5 @@ class PitchnotesApplicationTests {
 		List<Article> foundArticles = articleRepository.findByCategoryLeagueIgnoreCase("serie a");
 		assertEquals(1, foundArticles.size());
 	}
+
 }
