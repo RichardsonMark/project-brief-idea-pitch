@@ -40,8 +40,14 @@ class PitchnotesApplicationTests {
 	}
 
 	@Test
-	public void canFndArticleByAuthorName(){
-		List<Article> foundArticles = articleRepository.findByAuthorName("Mark Richardson");
+	public void canFindArticleByAuthorName(){
+		List<Article> foundArticles = articleRepository.findByAuthorNameIgnoreCase("mark richardson");
+		assertEquals(1, foundArticles.size());
+	}
+
+	@Test
+	public void canFindArticleByDate(){
+		List<Article> foundArticles = articleRepository.findByDateIgnoreCase("11-02-2021 11:18:32");
 		assertEquals(1, foundArticles.size());
 	}
 }
