@@ -3,6 +3,7 @@ package com.example.codeclan.pitchnotes.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.sql.Time;
 import java.util.Calendar;
 
 @Entity
@@ -26,11 +27,11 @@ public class Article {
     @Column
     private String mainStory;
     @Column
-    private Calendar date;
+    private String date;
     @Column
     private int numPageReads;
 
-    public Article(String headline, Author author, String categoryLeague, String lede, String mainStory, Calendar date, int numPageReads) {
+    public Article(String headline, Author author, String categoryLeague, String lede, String mainStory, String date, int numPageReads) {
         this.headline = headline;
         this.author = author;
         this.categoryLeague = categoryLeague;
@@ -91,11 +92,11 @@ public class Article {
         this.mainStory = mainStory;
     }
 
-    public Calendar getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Calendar date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
