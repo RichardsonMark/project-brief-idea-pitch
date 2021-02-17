@@ -50,4 +50,10 @@ class PitchnotesApplicationTests {
 		List<Article> foundArticles = articleRepository.findByDateIgnoreCase("11-02-2021 11:18:32");
 		assertEquals(1, foundArticles.size());
 	}
+
+	@Test
+	public void canFindArticleByCategoryLeague(){
+		List<Article> foundArticles = articleRepository.findByCategoryLeagueIgnoreCase("serie a");
+		assertEquals(1, foundArticles.size());
+	}
 }
