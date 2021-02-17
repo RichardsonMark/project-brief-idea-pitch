@@ -5,9 +5,7 @@ import com.example.codeclan.pitchnotes.repositories.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,22 +14,42 @@ public class ArticleController {
     @Autowired
     ArticleRepository articleRepository;
 
+    @GetMapping(value = "/articles/{id}")
+    public ResponseEntity getArticle(@PathVariable Long id) {
+        return new ResponseEntity<>(articleRepository.findById(id), HttpStatus.OK);
+    }
+
+//    @GetMapping(value="/articles")
+//    public ResponseEntity<List<Article>> canGetAllArticles(
+//            @RequestParam(name="categoryLeague", required = false) String categoryLeague,
+//            @RequestParam(name="date", required = false) String date
+//    ) {
+//        if(categoryLeague != null  && date == null){
+//            return new ResponseEntity<>(articleRepository.findByCategoryLeagueIgnoreCase(categoryLeague), HttpStatus.OK);
+//        }
+//        if(date != null && categoryLeague == null){
+//            return new ResponseEntity<>(articleRepository.findByDateIgnoreCase(date), HttpStatus.OK);
+//        }
+//        if(date != null && categoryLeague != null) {
+//            return new ResponseEntity<>(articleRepository.findByCategoryLeagueIgnoreCaseAndDate(categoryLeague, date), HttpStatus.OK);
+//        }
+//        return new ResponseEntity<>(articleRepository.findAll(), HttpStatus.OK);
+//    }
+
     @GetMapping(value="/articles")
-    public ResponseEntity canGetAllArticles() {return new ResponseEntity(articleRepository.findAll(), HttpStatus.OK); }
+    public ResponseEntity<List<Article>> canGetAllArticles() {
+        return new ResponseEntity<>(articleRepository.findAll(), HttpStatus.OK);
+    }
+
 
     @GetMapping(value = "/{name}/articles")
-    public List<Article> getArticlesByAuthor(@PathVariable String name) {
-        return articleRepository.findByAuthorNameIgnoreCase(name);
+    public ResponseEntity<List<Article>> getArticlesByAuthor(@PathVariable String name) {
+        return new ResponseEntity<>(articleRepository.findByAuthorNameIgnoreCase(name), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/articles/{categoryLeague}")
-    public List<Article> getArticlesByCategory(@PathVariable String categoryLeague) {
-        return articleRepository.findByCategoryLeagueIgnoreCase(categoryLeague);
-    }
-
-    @GetMapping(value = "/{date}/articles")
-    public List<Article> getArticlesByDate(@PathVariable String date) {
-        return articleRepository.findByDateIgnoreCase(date);
+    @GetMapping(value = "/articles/league/{categoryLeague}")
+    public ResponseEntity getArticleByCategoryLeague(@PathVariable String categoryLeague) {
+        return new ResponseEntity<>(articleRepository.findByCategoryLeagueIgnoreCase(categoryLeague), HttpStatus.OK);
     }
 
 }

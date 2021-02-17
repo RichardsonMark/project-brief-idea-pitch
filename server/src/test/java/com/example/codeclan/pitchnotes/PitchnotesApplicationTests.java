@@ -57,4 +57,16 @@ class PitchnotesApplicationTests {
 		assertEquals(1, foundArticles.size());
 	}
 
+	@Test
+	public void canFindArticleByCategoryLeagueAndDate(){
+		List<Article> foundArticles = articleRepository.findByCategoryLeagueIgnoreCaseAndDate("serie a", "11-02-2021 11:18:32");
+		assertEquals(1, foundArticles.size());
+	}
+
+	@Test
+	public void canFindAuthorByName(){
+		List<Author> foundAuthors = authorRepository.findByNameIgnoreCase("mark richardson");
+		assertEquals(1, foundAuthors.size());
+	}
+
 }
