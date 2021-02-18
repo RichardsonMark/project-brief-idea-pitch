@@ -1,4 +1,6 @@
 import { Link, useHistory } from "react-router-dom";
+import { Button } from '@material-ui/core';
+
 
 
 const NavBar = () => {
@@ -9,20 +11,13 @@ const NavBar = () => {
     }
 
     return (
-        <ul>
-            <li>
-                <Link to="/">Home</Link>
-            </li>
-            <li>
-                <Link to="/authors">Authors</Link>
-            </li>
-            <li>
-                <Link to="/articles">Articles</Link>
-            </li>
-            <li>
-                <button onClick={goBack}>Back</button>
-            </li>
-        </ul>
+        <>
+            <h1>Pitch Notes - Keep 'In Touch' with football</h1>
+            <Button variant="contained" color="primary"><Link to="/">Home</Link></Button>
+            <Button variant="contained" color="primary"><Link to="/authors">Authors</Link></Button>
+            <Button variant="contained" color="primary"><Link to="/articles">Articles</Link></Button>
+            <Button variant="contained" onClick={goBack}>Back</Button>
+        </>
     );
 }
 
