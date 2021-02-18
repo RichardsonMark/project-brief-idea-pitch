@@ -1,9 +1,11 @@
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import ArticleList from '../components/ArticleList';
 import ArticleForm from '../components/ArticleForm';
 import ArticleDetail from '../components/ArticleDetail';
 import Request from '../helpers/request';
+import Grid from '@material-ui/core/Grid';
+
 
 
 const ArticlesContainer = () => {
@@ -84,13 +86,17 @@ const ArticlesContainer = () => {
                             authors={authors}
                         />
                     }} />
-        <Route render={() => {
-          return <ArticleList articles={articles} />
-      }} />
-        </Switch>
-      </>
-    </Router>
-  )
+                    <Route render={() => {
+                        return <>
+                            <Grid container spacing={4}>
+                                <ArticleList articles={articles} />
+                            </Grid>
+                        </>
+                    }} />
+                </Switch>
+            </>
+        </Router>
+    )
 }
 
 export default ArticlesContainer;
