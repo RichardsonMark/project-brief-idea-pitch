@@ -24,10 +24,10 @@ public class ArticleController {
 //            @RequestParam(name="categoryLeague", required = false) String categoryLeague,
 //            @RequestParam(name="date", required = false) String date
 //    ) {
-//        if(categoryLeague != null  && date == null){
+//        if(categoryLeague != null){
 //            return new ResponseEntity<>(articleRepository.findByCategoryLeagueIgnoreCase(categoryLeague), HttpStatus.OK);
 //        }
-//        if(date != null && categoryLeague == null){
+//        if(date != null){
 //            return new ResponseEntity<>(articleRepository.findByDateIgnoreCase(date), HttpStatus.OK);
 //        }
 //        if(date != null && categoryLeague != null) {
