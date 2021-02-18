@@ -1,6 +1,7 @@
 package com.example.codeclan.pitchnotes.controllers;
 
 import com.example.codeclan.pitchnotes.models.Article;
+import com.example.codeclan.pitchnotes.models.Author;
 import com.example.codeclan.pitchnotes.repositories.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -50,6 +51,25 @@ public class ArticleController {
     @GetMapping(value = "/articles/league/{categoryLeague}")
     public ResponseEntity getArticleByCategoryLeague(@PathVariable String categoryLeague) {
         return new ResponseEntity<>(articleRepository.findByCategoryLeagueIgnoreCase(categoryLeague), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/articles")
+    public ResponseEntity<Article> createArticle(@RequestBody Article article) {
+        articleRepository.save(article);
+        return new ResponseEntity<>(article, HttpStatus.CREATED);
+    }
+
+    @PatchMapping(value = "articles/{id}")
+    public ResponseEntity<Article> updateArticle(@RequestBody Article article){
+        articleRepository.save(article);
+        return new ResponseEntity<>(article, HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "articles/{id}")
+    public ResponseEntity deleteArticle(@PathVariable Long id){
+        Article found = articleRepository.getOne(id);
+        articleRepository.delete(found);
+        return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
 }

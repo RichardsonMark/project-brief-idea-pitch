@@ -36,13 +36,13 @@ public class AuthorController {
     }
 
     @PatchMapping(value = "authors/{id}")
-    public ResponseEntity<Author> updateAuthorById(@RequestBody Author author){
+    public ResponseEntity<Author> updateAuthor(@RequestBody Author author){
         authorRepository.save(author);
         return new ResponseEntity<>(author, HttpStatus.OK);
     }
 
     @DeleteMapping(value = "authors/{id}")
-    public ResponseEntity deleteAuthorById(@PathVariable Long id){
+    public ResponseEntity deleteAuthor(@PathVariable Long id){
         Author found = authorRepository.getOne(id);
         authorRepository.delete(found);
         return new ResponseEntity<>(null, HttpStatus.OK);
