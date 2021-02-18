@@ -13,13 +13,13 @@ const Author = ({ author }) => {
 
     return (
         <>
-            <p>{author.name}</p>
+            <p><Link to={url} className="name">{author.name}</Link></p>
             {/* <Table>
                 <Table.Body>
-                    {author.map((authorArticles) => {
+                    {articles.map((authorArticles) => {
                         return (
                             <Table.Row key={authorArticles.id}>
-                                <Table.Cell><Link to={url} className="name">{authorArticles.headline}</Link></Table.Cell>
+                                <Table.Cell><Link to={url2} className="name">{authorArticles.headline}</Link></Table.Cell>
                                 <Table.Cell>{authorArticles.lede}</Table.Cell>
                             </Table.Row>
                         );
