@@ -59,7 +59,7 @@ let heading = "";
 if (!author){
     heading = "Create Author"
   } else {
-    heading = "Edit " + author.name;
+    heading = "Edit: " + author.name;
   }
 
 if (!articles.length === 0){

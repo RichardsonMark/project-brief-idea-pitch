@@ -1,4 +1,5 @@
 import Article from './Article.js';
+import { Container } from '@material-ui/core';
 
 
 const ArticleList = ({articles}) => {
@@ -18,9 +19,12 @@ const ArticleList = ({articles}) => {
 	})
 
 	return (
-	  <ul className="component-list">
-	    {articlesNodes}
-	  </ul>
+		<Container>
+			<h2>Click headline to edit article</h2>
+			<ul className="component-list">
+				{articlesNodes}
+			</ul>
+		</Container>
 	)
 }
  export default ArticleList;

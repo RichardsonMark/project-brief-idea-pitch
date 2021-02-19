@@ -4,7 +4,7 @@ import ArticleList from '../components/ArticleList';
 import ArticleForm from '../components/ArticleForm';
 import ArticleDetail from '../components/ArticleDetail';
 import Request from '../helpers/request';
-import Grid from '@material-ui/core/Grid';
+import { Grid, Button } from '@material-ui/core';
 
 
 
@@ -37,20 +37,20 @@ const ArticlesContainer = () => {
 
     const handleDelete = function (id) {
         const request = new Request();
-        const url = "/api/articles/" + id
+        const url = "http://localhost:8080/api/articles/" + id
         request.delete(url)
             .then(() => window.location = "/articles")
     }
 
     const handlePost = function (article) {
         const request = new Request();
-        request.post("/api/articles", article)
+        request.post("http://localhost:8080/api/articles", article)
             .then(() => window.location = '/articles')
     }
 
     const handleUpdate = function (article) {
         const request = new Request();
-        request.patch('/api/articles/' + article.id, article)
+        request.patch('http://localhost:8080/api/articles/' + article.id, article)
             .then(() => {
                 window.location = '/articles/' + article.id
             })
@@ -88,6 +88,8 @@ const ArticlesContainer = () => {
                     }} />
                     <Route render={() => {
                         return <>
+                            <h1>Create / Edit Articles</h1>
+                            <Button variant="contained" color="primary" href="/articles/new">Create New Article</Button>
                             <Grid container spacing={4}>
                                 <ArticleList articles={articles} />
                             </Grid>

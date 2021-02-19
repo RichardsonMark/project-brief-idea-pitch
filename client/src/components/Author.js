@@ -1,7 +1,7 @@
 // import { Link } from 'react-router-dom';
-import { Table } from '@material-ui/core';
-import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
+import { Table, Container, Link } from '@material-ui/core';
+// import Container from '@material-ui/core';
+// import Link from '@material-ui/core';
 
 
 

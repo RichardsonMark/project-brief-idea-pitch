@@ -4,6 +4,8 @@ import AuthorList from '../components/AuthorList';
 import AuthorForm from '../components/AuthorForm';
 import AuthorDetail from '../components/AuthorDetail';
 import Request from '../helpers/request';
+import { Button } from '@material-ui/core';
+
 
 
 const AuthorsContainer = () => {
@@ -35,20 +37,20 @@ const AuthorsContainer = () => {
 
     const handleDelete = function (id) {
         const request = new Request();
-        const url = "/api/authors/" + id
+        const url = "http://localhost:8080/api/authors/" + id
         request.delete(url)
             .then(() => window.location = "/authors")
     }
 
     const handlePost = function (author) {
         const request = new Request();
-        request.post("/api/authors", author)
+        request.post("http://localhost:8080/api/authors", author)
             .then(() => window.location = '/authors')
     }
 
     const handleUpdate = function (author) {
         const request = new Request();
-        request.patch('/api/authors/' + author.id, author)
+        request.patch('http://localhost:8080/api/authors/' + author.id, author)
             .then(() => {
                 window.location = '/authors/' + author.id
             })
@@ -87,7 +89,8 @@ const AuthorsContainer = () => {
 
                     <Route render={() => {
                         return <>
-                        <h1>Authors:</h1>
+                        <h1>Create / Edit Authors</h1>
+                        <Button variant="contained" color="primary"  href="/authors/new">Create New Author</Button>
                         <AuthorList authors={authors} />
                         </>
                     }} />

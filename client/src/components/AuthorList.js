@@ -1,4 +1,5 @@
 import Author from './Author.js';
+import { Container } from '@material-ui/core';
 
 
 const AuthorList = ({authors}) => {
@@ -18,9 +19,13 @@ const AuthorList = ({authors}) => {
 	})
 
 	return (
-	  <ul className="component-list">
-	    {authorsNodes}
-	  </ul>
+		<Container>
+			<h2>Click on author name to edit</h2>
+
+			<ul className="component-list">
+				{authorsNodes}
+			</ul>
+		</Container>
 	)
 }
  export default AuthorList;

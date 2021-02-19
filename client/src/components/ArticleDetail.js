@@ -1,7 +1,8 @@
 import React from 'react';
 import Article from "./Article";
-import {Link} from 'react-router-dom';
-import { Button } from '@material-ui/core';
+// import {Link} from 'react-router-dom';
+import { Button, Link } from '@material-ui/core';
+
 
 
 const ArticleDetail = ({author, article, onDelete, onUpdate}) => {
@@ -65,10 +66,10 @@ const ArticleDetail = ({author, article, onDelete, onUpdate}) => {
     <select name="articles" >
     {authorOptions}
     </select>
-    <input type="submit" value="Add Article"/>
+    <input type="submit" value="Add New Article"/>
     </form> */}
-    <Button variant="contained" color="primary" onClick={handleDelete}>Delete article: {article.headline}</Button>
-    <Button variant="contained" color="primary" type="button"><Link to= {editUrl}>Edit {}</Link></Button>
+    <Button variant="contained" type="button"><Link href= {editUrl}><p>Edit article: {article.headline}</p></Link></Button>
+    <Button variant="contained" color="secondary" onClick={handleDelete}><p>Delete article: {article.headline}</p></Button>
     </div>
   )
 }

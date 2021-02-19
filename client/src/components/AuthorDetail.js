@@ -1,7 +1,7 @@
 import React from 'react';
 import Author from "./Author";
-import {Link} from 'react-router-dom';
-import { Button } from '@material-ui/core';
+// import {Link} from 'react-router-dom';
+import { Button, Link } from '@material-ui/core';
 
 
 const AuthorDetail = ({author, articles, onDelete, onUpdate}) => {
@@ -37,7 +37,8 @@ const AuthorDetail = ({author, articles, onDelete, onUpdate}) => {
 
   const authorsArticles = author.articles.map((article, index) => {
     return <li key={index}>
-    {article.headline} - {article.date} <button onClick={() => deleteArticle(index)}>Delete</button>
+    {article.headline} - {article.date} 
+    {/* <button onClick={() => deleteArticle(index)}>Delete</button> */}
     </li>
   })
 
@@ -61,14 +62,14 @@ const AuthorDetail = ({author, articles, onDelete, onUpdate}) => {
     <ul>
     {authorsArticles}
     </ul>
-    <form onSubmit={handleSubmit}>
+    {/* <form onSubmit={handleSubmit}>
     <select name="articles" >
     {articleOptions}
     </select>
     <input type="submit" value="Add Article"/>
-    </form>
-    <Button variant="contained" color="primary" onClick={handleDelete}>Delete {author.name}</Button>
-    <Link to= {editUrl}><Button variant="contained" color="primary" type="button">Edit {author.name}</Button></Link>
+    </form> */}
+    <Link href= {editUrl}><Button variant="contained" color="primary" type="button"><p>Edit: {author.name}</p></Button></Link>
+    <Button variant="contained" color="secondary" onClick={handleDelete}><p>Delete: {author.name}</p></Button>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Button } from '@material-ui/core';
 
 
-const ArticleForm = ({articles, author, onCreate, onUpdate}) => {
+const ArticleForm = ({article, authors, onCreate, onUpdate}) => {
 
 const [stateArticle, setStateArticle] = useState(
     {
@@ -18,9 +18,9 @@ const handleChange = function(event){
     setStateArticle(copiedArticle)
 }
 
-const handleArticle = function(event){
+const handleAuthor = function(event){
     const index = parseInt(event.target.value)
-    const selectedAuthor = author[index]
+    const selectedAuthor = authors[index]
     let copiedArticle = {...stateArticle};
     copiedArticle['author'] = selectedAuthor
     setStateArticle(copiedArticle)
@@ -35,34 +35,34 @@ const handleSubmit = function(event){
       }
 }
 
-const findArticleIndex = function(){
-    if(articles){
-      return articles.findIndex(articles => articles.id === articles.id)
+const findAuthorIndex = function(){
+    if(article){
+      return authors.findIndex(author => article.author.id === author.id)
     } else {
       return null;
     }
   }
 
 useEffect(()=>{
-  if(articles){
-    let copiedArticle = {...articles}
+  if(article){
+    let copiedArticle = {...article}
     setStateArticle(copiedArticle)
 }
-  }, [articles])
+  }, [article])
 
-const articleOptions = articles.map((article, index) => {
-    return <option key={index} value={index}>{article.headline} - {article.date}</option>
+const authorOptions = authors.map((author, index) => {
+    return <option key={index} value={index}>{author.name}</option>
 })
 
 let heading = "";
 
-if (!articles){
+if (!article){
     heading = "Create Article"
   } else {
-    heading = "Edit " + articles.headline;
+    heading = "Edit: " + article.headline;
   }
 
-if (!articles.length === 0){
+if (!authors.length === 0){
     return <p>Loading...</p>
     }
   return(
@@ -74,9 +74,9 @@ if (!articles.length === 0){
     <input type="text" placeholder="CategoryLeague" name="categoryLeague" onChange={handleChange} value={stateArticle.categoryLeague} />
     <input type="text" placeholder="MainStory" name="mainStory" onChange={handleChange} value={stateArticle.mainStory} />
     <input type="text" placeholder="Date" name="date" onChange={handleChange} value={stateArticle.date} />
-    <select name="article" onChange={handleArticle} defaultValue={findArticleIndex() || 'select-article'}>
-    <option disabled value='select-article'>Select an article</option>
-        {articleOptions}
+    <select name="author" onChange={handleAuthor} defaultValue={findAuthorIndex() || 'select-author'}>
+    <option disabled value='select-author'>Select an author</option>
+        {authorOptions}
     </select>   
     <Button type="submit">Save</Button>
     </form>

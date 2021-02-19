@@ -15,7 +15,7 @@ const Article = ({ article }) => {
             <h1><Link href={url} className="name">
                 {article.headline}
             </Link></h1>
-            <p>{article.date}</p>
+            <p>posted: {article.date}</p>
             <p>{article.lede}</p>
             <p>{article.mainStory}</p>
         </Container>
