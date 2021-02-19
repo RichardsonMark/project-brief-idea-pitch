@@ -67,7 +67,7 @@ const ArticlesContainer = () => {
                 <Switch>
 
                     <Route exact path='/articles/new' render={() => {
-                        return <ArticleForm articles={articles} onCreate={handlePost} />
+                        return <ArticleForm authors={authors} onCreate={handlePost} />
                     }} />
 
                     <Route exact path="/articles/:id/edit" render={(props) => {

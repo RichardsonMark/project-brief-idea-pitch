@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Button } from '@material-ui/core';
 
 
-const ArticleForm = ({article, articles, author, authors, onCreate, onUpdate}) => {
+const ArticleForm = ({article, authors, onCreate, onUpdate}) => {
 
 const [stateArticle, setStateArticle] = useState(
     {
@@ -67,9 +67,9 @@ if (!article){
     heading = "Edit: " + article.headline;
   }
 
-// if (!author.length === 0){
-//     return <p>Loading...</p>
-//     }
+if (!authors.length === 0){
+    return <p>Loading...</p>
+    }
   return(
     <>
     <h3>{heading}</h3>
