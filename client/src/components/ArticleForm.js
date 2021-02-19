@@ -2,12 +2,16 @@ import React, {useState, useEffect} from 'react';
 import { Button } from '@material-ui/core';
 
 
-const ArticleForm = ({article, authors, onCreate, onUpdate}) => {
+const ArticleForm = ({article, articles, author, authors, onCreate, onUpdate}) => {
 
 const [stateArticle, setStateArticle] = useState(
     {
-        name: "",
-        article: null
+        headline: "",
+        author: null,
+        categoryLeague: "",
+        lede: "",
+        mainStory: "",
+        date: "",
     }
 )
 
@@ -37,7 +41,7 @@ const handleSubmit = function(event){
 
 const findAuthorIndex = function(){
     if(article){
-      return authors.findIndex(author => article.author.id === author.id)
+      return authors.findIndex(authors => authors.id === authors.id)
     } else {
       return null;
     }
@@ -49,6 +53,7 @@ useEffect(()=>{
     setStateArticle(copiedArticle)
 }
   }, [article])
+  console.log(article)
 
 const authorOptions = authors.map((author, index) => {
     return <option key={index} value={index}>{author.name}</option>
@@ -62,9 +67,9 @@ if (!article){
     heading = "Edit: " + article.headline;
   }
 
-if (!authors.length === 0){
-    return <p>Loading...</p>
-    }
+// if (!author.length === 0){
+//     return <p>Loading...</p>
+//     }
   return(
     <>
     <h3>{heading}</h3>
@@ -78,7 +83,7 @@ if (!authors.length === 0){
     <option disabled value='select-author'>Select an author</option>
         {authorOptions}
     </select>   
-    <Button type="submit">Save</Button>
+    <Button  variant="contained" color="primary" type="submit">Save</Button>
     </form>
     </>
   )

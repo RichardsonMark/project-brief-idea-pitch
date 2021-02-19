@@ -18,13 +18,13 @@ const handleChange = function(event){
     setStateAuthor(copiedAuthor)
 }
 
-const handleArticle = function(event){
-    const index = parseInt(event.target.value)
-    const selectedArticle = articles[index]
-    let copiedAuthor = {...stateAuthor};
-    copiedAuthor['article'] = selectedArticle
-    setStateAuthor(copiedAuthor)
-}
+// const handleArticle = function(event){
+//     const index = parseInt(event.target.value)
+//     const selectedArticle = articles[index]
+//     let copiedAuthor = {...stateAuthor};
+//     copiedAuthor['article'] = selectedArticle
+//     setStateAuthor(copiedAuthor)
+// }
 
 const handleSubmit = function(event){
     event.preventDefault();
@@ -35,13 +35,13 @@ const handleSubmit = function(event){
       }
 }
 
-const findArticleIndex = function(){
-    if(author){
-      return articles.findIndex(article => author.articles.id === article.id)
-    } else {
-      return null;
-    }
-  }
+// const findArticleIndex = function(){
+//     if(author){
+//       return articles.findIndex(article => author.articles.id === article.id)
+//     } else {
+//       return null;
+//     }
+//   }
 
 useEffect(()=>{
   if(author){
@@ -50,9 +50,9 @@ useEffect(()=>{
 }
   }, [author])
 
-const articleOptions = articles.map((article, index) => {
-    return <option key={index} value={index}>{article.headline} - {article.date}</option>
-})
+// const articleOptions = articles.map((article, index) => {
+//     return <option key={index} value={index}>{article.headline} - {article.date}</option>
+// })
 
 let heading = "";
 
@@ -70,11 +70,11 @@ if (!articles.length === 0){
     <h3>{heading}</h3>
     <form onSubmit={handleSubmit}>
     <input type="text" placeholder="Name" name="name" onChange={handleChange} value={stateAuthor.name} />
-    <select name="article" onChange={handleArticle} defaultValue={findArticleIndex() || 'select-article'}>
+    {/* <select name="article" onChange={handleArticle} defaultValue={findArticleIndex() || 'select-article'}>
     <option disabled value='select-article'>Select an article</option>
         {articleOptions}
-    </select>   
-    <Button variant="contained" color="primary"  type="submit">Save</Button>
+    </select>    */}
+    <Button variant="contained" color="primary" type="submit">Save</Button>
     </form>
     </>
   )
