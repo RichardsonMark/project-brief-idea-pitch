@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from "react";
-import ArticleList from '../components/ArticleList';
-import ArticleForm from '../components/ArticleForm';
-import ArticleDetail from '../components/ArticleDetail';
+import ArticleList from '../components/articles/ArticleList';
+import ArticleForm from '../components/articles/ArticleForm';
+import ArticleDetail from '../components/articles/ArticleDetail';
 import Request from '../helpers/request';
 import { Grid, Button } from '@material-ui/core';
 

@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from "react";
-import AuthorList from '../components/AuthorList';
-import AuthorForm from '../components/AuthorForm';
-import AuthorDetail from '../components/AuthorDetail';
+import AuthorList from '../components/authors/AuthorList';
+import AuthorForm from '../components/authors/AuthorForm';
+import AuthorDetail from '../components/authors/AuthorDetail';
 import Request from '../helpers/request';
 import { Button } from '@material-ui/core';
 
