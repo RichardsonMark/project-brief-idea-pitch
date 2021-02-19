@@ -2,8 +2,12 @@ package com.example.codeclan.pitchnotes;
 
 import com.example.codeclan.pitchnotes.models.Article;
 import com.example.codeclan.pitchnotes.models.Author;
+import com.example.codeclan.pitchnotes.models.League;
+import com.example.codeclan.pitchnotes.models.Team;
 import com.example.codeclan.pitchnotes.repositories.ArticleRepository;
 import com.example.codeclan.pitchnotes.repositories.AuthorRepository;
+import com.example.codeclan.pitchnotes.repositories.LeagueRepository;
+import com.example.codeclan.pitchnotes.repositories.TeamRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,6 +24,12 @@ class PitchnotesApplicationTests {
 
 	@Autowired
 	ArticleRepository articleRepository;
+
+	@Autowired
+	TeamRepository teamRepository;
+
+	@Autowired
+	LeagueRepository leagueRepository;
 
 	@Test
 	void contextLoads() {
@@ -69,4 +79,18 @@ class PitchnotesApplicationTests {
 		assertEquals(1, foundAuthors.size());
 	}
 
+	@Test
+	public void canCreateAndSaveLeagueToDb(){
+		League seriea = new League("Serie A", "https://crests.football-data.org/SA.svg");
+		leagueRepository.save(seriea);
+	}
+
+	@Test
+	public void canCreateSaveTeamToDb(){
+		League seriea = new League("Serie A", "https://crests.football-data.org/SA.svg");
+		leagueRepository.save(seriea);
+		Team juve = new Team("Juventus", "crest_url", seriea, 5, "W W W W W", 5, 5, 5, 5, 5, 5, 5 );
+		teamRepository.save(juve);
+
+	}
 }

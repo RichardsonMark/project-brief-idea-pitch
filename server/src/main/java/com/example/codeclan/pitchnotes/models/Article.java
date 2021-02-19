@@ -3,8 +3,6 @@ package com.example.codeclan.pitchnotes.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.sql.Time;
-import java.util.Calendar;
 
 @Entity
 @Table(name="articles")
