@@ -117,4 +117,22 @@ class PitchnotesApplicationTests {
 		List<Fixture> foundFixtures = fixtureRepository.findAll();
 		assertEquals(1 , foundFixtures.size());
 	}
+
+	@Test
+	public void canFindFixturesByLeagueAndMatchStatus() {
+		League seriea = new League("Serie A", "https://crests.football-data.org/SA.svg");
+		leagueRepository.save(seriea);
+		League bundesliga = new League("Bundesliga", "https://crests.football-data.org/BL1.svg");
+		leagueRepository.save(bundesliga);
+		Fixture juveinter = new Fixture(seriea, "COMPLETE", 23, 2, 1, "Juventus", "Inter Milan");
+		fixtureRepository.save(juveinter);
+		Fixture sampmilan = new Fixture(seriea, "COMPLETE", 23, 2, 1, "Sampdoria", "AC Milan");
+		fixtureRepository.save(sampmilan);
+		Fixture atalantaroma = new Fixture(seriea, "IN_PLAY", 23, 2, 1, "Atalanta", "Roma");
+		fixtureRepository.save(atalantaroma);
+		Fixture bayerndortmund = new Fixture(bundesliga, "COMPLETE", 23, 2, 1, "Bayern Munich", "Borussia Dortmund");
+		fixtureRepository.save(bayerndortmund);
+		List<Fixture> foundLeagueFixtures = fixtureRepository.findByLeagueAndMatchStatusIgnoreCase(seriea,"Complete");
+		assertEquals(2, foundLeagueFixtures.size());
+	}
 }
