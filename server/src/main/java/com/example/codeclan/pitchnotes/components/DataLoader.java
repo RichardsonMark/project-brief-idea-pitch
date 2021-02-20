@@ -65,6 +65,10 @@ public class DataLoader implements ApplicationRunner {
         // team and league info - creating own api for MVP (may bring in real api for extension)
         League seriea = new League("Serie A", "https://crests.football-data.org/SA.svg");
         leagueRepository.save(seriea);
+        League bundesliga = new League("Bundesliga", "https://crests.football-data.org/BL1.svg");
+        leagueRepository.save(bundesliga);
+        League laliga = new League("La Liga", "https://crests.football-data.org/SL1.svg");
+        leagueRepository.save(laliga);
 
 
         Team intermilan = new Team("Inter Milan", "https://crests.football-data.org/108.svg", seriea, 22, "W W W D W", 15, 5, 2, 50, 54, 24, 30, 1 );
