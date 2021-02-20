@@ -1,13 +1,7 @@
 package com.example.codeclan.pitchnotes.components;
 
-import com.example.codeclan.pitchnotes.models.Article;
-import com.example.codeclan.pitchnotes.models.Author;
-import com.example.codeclan.pitchnotes.models.League;
-import com.example.codeclan.pitchnotes.models.Team;
-import com.example.codeclan.pitchnotes.repositories.ArticleRepository;
-import com.example.codeclan.pitchnotes.repositories.AuthorRepository;
-import com.example.codeclan.pitchnotes.repositories.LeagueRepository;
-import com.example.codeclan.pitchnotes.repositories.TeamRepository;
+import com.example.codeclan.pitchnotes.models.*;
+import com.example.codeclan.pitchnotes.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -30,6 +24,9 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     LeagueRepository leagueRepository;
+
+    @Autowired
+    FixtureRepository fixtureRepository;
 
     public DataLoader(){}
 
@@ -87,5 +84,15 @@ public class DataLoader implements ApplicationRunner {
         teamRepository.save(atalanta);
         Team sassuolo = new Team("US Sassuolo Calcio", "https://crests.football-data.org/471.svg", seriea, 22, "W L W W L", 9, 7, 6, 34, 36, 33, 3, 8 );
         teamRepository.save(sassuolo);
+
+
+        Fixture juveinter = new Fixture(seriea, "COMPLETE", 23, 2, 1, "Juventus", "Inter Milan");
+        fixtureRepository.save(juveinter);
+        Fixture sampmilan = new Fixture(seriea, "COMPLETE", 23, 2, 1, "Sampdoria", "AC Milan");
+        fixtureRepository.save(sampmilan);
+        Fixture atalantaroma = new Fixture(seriea, "IN_PLAY", 23, 2, 1, "Atalanta", "Roma");
+        fixtureRepository.save(atalantaroma);
+        Fixture bayerndortmund = new Fixture(bundesliga, "COMPLETE", 23, 2, 1, "Bayern Munich", "Borussia Dortmund");
+        fixtureRepository.save(bayerndortmund);
     }
 }
