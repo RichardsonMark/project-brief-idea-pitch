@@ -89,8 +89,21 @@ class PitchnotesApplicationTests {
 	public void canCreateSaveTeamToDb(){
 		League seriea = new League("Serie A", "https://crests.football-data.org/SA.svg");
 		leagueRepository.save(seriea);
-		Team juve = new Team("Juventus", "crest_url", seriea, 5, "W W W W W", 5, 5, 5, 5, 5, 5, 5 );
+		Team juve = new Team("Juventus", "crest_url", seriea, 5, "W W W W W", 5, 5, 5, 5, 5, 5, 5, 4);
 		teamRepository.save(juve);
+	}
 
+	@Test
+	public void canFindTeamsInALeague(){
+		League seriea = new League("Serie A", "https://crests.football-data.org/SA.svg");
+		leagueRepository.save(seriea);
+		Team juventus = new Team("Juventus", "https://crests.football-data.org/109.svg", seriea, 21, "L W W W L", 12, 6, 3, 42, 41, 19, 22,  4);
+		teamRepository.save(juventus);
+		Team intermilan = new Team("Inter Milan", "https://crests.football-data.org/108.svg", seriea, 22, "W W W D W", 15, 5, 2, 50, 54, 24, 30, 1 );
+		teamRepository.save(intermilan);
+		Team acmilan = new Team("AC Milan", "https://crests.football-data.org/98.svg", seriea, 22, "L W W L W", 15, 4, 3, 49, 45, 25, 20, 2 );
+		teamRepository.save(acmilan);
+		List<Team> foundTeams = teamRepository.findByLeague(seriea);
+		assertEquals(3, foundTeams.size());
 	}
 }

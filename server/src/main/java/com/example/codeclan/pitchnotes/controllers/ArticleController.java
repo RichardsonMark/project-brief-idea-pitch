@@ -53,6 +53,11 @@ public class ArticleController {
         return new ResponseEntity<>(articleRepository.findByCategoryLeagueIgnoreCase(categoryLeague), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/articles/read/{date}")
+    public ResponseEntity getArticleReadingVersionByDate(@PathVariable String date) {
+        return new ResponseEntity<>(articleRepository.findByDateIgnoreCase(date), HttpStatus.OK);
+    }
+
     @PostMapping(value = "/articles")
     public ResponseEntity<Article> createArticle(@RequestBody Article article) {
         articleRepository.save(article);

@@ -66,21 +66,22 @@ public class DataLoader implements ApplicationRunner {
         League seriea = new League("Serie A", "https://crests.football-data.org/SA.svg");
         leagueRepository.save(seriea);
 
-        Team juventus = new Team("Juventus", "https://crests.football-data.org/109.svg", seriea, 21, "L W W W L", 12, 6, 3, 42, 41, 19, 22 );
-        teamRepository.save(juventus);
-        Team intermilan = new Team("Inter Milan", "https://crests.football-data.org/108.svg", seriea, 22, "W W W D W", 15, 5, 2, 50, 54, 24, 30 );
+
+        Team intermilan = new Team("Inter Milan", "https://crests.football-data.org/108.svg", seriea, 22, "W W W D W", 15, 5, 2, 50, 54, 24, 30, 1 );
         teamRepository.save(intermilan);
-        Team acmilan = new Team("AC Milan", "https://crests.football-data.org/98.svg", seriea, 22, "L W W L W", 15, 4, 3, 49, 45, 25, 20 );
+        Team acmilan = new Team("AC Milan", "https://crests.football-data.org/98.svg", seriea, 22, "L W W L W", 15, 4, 3, 49, 45, 25, 20, 2 );
         teamRepository.save(acmilan);
-        Team roma = new Team("Roma", "https://crests.football-data.org/100.svg", seriea, 22, "W L W W L", 13, 4, 5, 43, 47, 35, 12 );
+        Team roma = new Team("Roma", "https://crests.football-data.org/100.svg", seriea, 22, "W L W W L", 13, 4, 5, 43, 47, 35, 12,3 );
         teamRepository.save(roma);
-        Team lazio = new Team("SS Lazio", "https://crests.football-data.org/110.svg", seriea, 22, "L W W W W", 12, 4, 6, 40, 37, 30, 7 );
+        Team juventus = new Team("Juventus", "https://crests.football-data.org/109.svg", seriea, 21, "L W W W L", 12, 6, 3, 42, 41, 19, 22,4);
+        teamRepository.save(juventus);
+        Team lazio = new Team("SS Lazio", "https://crests.football-data.org/110.svg", seriea, 22, "L W W W W", 12, 4, 6, 40, 37, 30, 7, 5 );
         teamRepository.save(lazio);
-        Team napoli = new Team("SC Napoli", "https://crests.football-data.org/113.svg", seriea, 21, "W L W L W", 13, 1, 7, 40, 45, 21, 24 );
+        Team napoli = new Team("SC Napoli", "https://crests.football-data.org/113.svg", seriea, 21, "W L W L W", 13, 1, 7, 40, 45, 21, 24, 6 );
         teamRepository.save(napoli);
-        Team atalanta = new Team("Atalanta BC", "https://crests.football-data.org/102.svg", seriea, 22, "W D L W D", 11, 7, 4, 40, 49, 29, 20 );
+        Team atalanta = new Team("Atalanta BC", "https://crests.football-data.org/102.svg", seriea, 22, "W D L W D", 11, 7, 4, 40, 49, 29, 20, 7 );
         teamRepository.save(atalanta);
-        Team sassuolo = new Team("US Sassuolo Calcio", "https://crests.football-data.org/471.svg", seriea, 22, "W L W W L", 9, 7, 6, 34, 36, 33, 3 );
+        Team sassuolo = new Team("US Sassuolo Calcio", "https://crests.football-data.org/471.svg", seriea, 22, "W L W W L", 9, 7, 6, 34, 36, 33, 3, 8 );
         teamRepository.save(sassuolo);
     }
 }

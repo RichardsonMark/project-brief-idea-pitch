@@ -5,6 +5,8 @@ import ArticleForm from '../components/articles/ArticleForm';
 import ArticleDetail from '../components/articles/ArticleDetail';
 import Request from '../helpers/request';
 import { Grid, Button } from '@material-ui/core';
+import ArticleReadingDetail from '../components/articles/ArticleReadingDetail';
+
 
 
 
@@ -86,6 +88,13 @@ const ArticlesContainer = () => {
                             authors={authors}
                         />
                     }} />
+
+                    <Route exact path='/articles/read/:id' render={(props) => {
+                            const id = props.match.params.id;
+                            const article = findArticleById(id);
+                        return <ArticleReadingDetail article={article} />
+                    }} />
+
                     <Route render={() => {
                         return <>
                             <h1>Create / Edit Articles</h1>

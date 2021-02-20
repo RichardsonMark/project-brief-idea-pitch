@@ -38,8 +38,10 @@ public class Team {
     private int goalsAgainst;
     @Column(name = "goalDifference")
     private int goalDifference;
+    @Column(name = "position")
+    private int position;
 
-    public Team(String name, String crestUrl, League league, int playedGames, String form, int won, int draw, int lost, int points, int goalsFor, int goalsAgainst, int goalDifference) {
+    public Team(String name, String crestUrl, League league, int playedGames, String form, int won, int draw, int lost, int points, int goalsFor, int goalsAgainst, int goalDifference, int position) {
         this.name = name;
         this.crestUrl = crestUrl;
         this.league = league;
@@ -52,6 +54,7 @@ public class Team {
         this.goalsFor = goalsFor;
         this.goalsAgainst = goalsAgainst;
         this.goalDifference = goalDifference;
+        this.position = position;
     }
 
     public Team() {
@@ -159,5 +162,13 @@ public class Team {
 
     public void setGoalDifference(int goalDifference) {
         this.goalDifference = goalDifference;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 }
