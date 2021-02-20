@@ -1,13 +1,7 @@
 package com.example.codeclan.pitchnotes;
 
-import com.example.codeclan.pitchnotes.models.Article;
-import com.example.codeclan.pitchnotes.models.Author;
-import com.example.codeclan.pitchnotes.models.League;
-import com.example.codeclan.pitchnotes.models.Team;
-import com.example.codeclan.pitchnotes.repositories.ArticleRepository;
-import com.example.codeclan.pitchnotes.repositories.AuthorRepository;
-import com.example.codeclan.pitchnotes.repositories.LeagueRepository;
-import com.example.codeclan.pitchnotes.repositories.TeamRepository;
+import com.example.codeclan.pitchnotes.models.*;
+import com.example.codeclan.pitchnotes.repositories.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,6 +24,9 @@ class PitchnotesApplicationTests {
 
 	@Autowired
 	LeagueRepository leagueRepository;
+
+	@Autowired
+	FixtureRepository fixtureRepository;
 
 	@Test
 	void contextLoads() {
@@ -106,5 +103,18 @@ class PitchnotesApplicationTests {
 		List<Team> foundTeams = teamRepository.findByLeague(seriea);
 		assertEquals(3, foundTeams.size());
 	}
-	
+
+	@Test
+	public void canFindFixtures(){
+		League seriea = new League("Serie A", "https://crests.football-data.org/SA.svg");
+		leagueRepository.save(seriea);
+//		Team juventus = new Team("Juventus", "https://crests.football-data.org/109.svg", seriea, 21, "L W W W L", 12, 6, 3, 42, 41, 19, 22,  4);
+//		teamRepository.save(juventus);
+//		Team intermilan = new Team("Inter Milan", "https://crests.football-data.org/108.svg", seriea, 22, "W W W D W", 15, 5, 2, 50, 54, 24, 30, 1 );
+//		teamRepository.save(intermilan);
+		Fixture juveinter = new Fixture(seriea, "COMPLETE", 23, 2, 1, "Juventus", "Inter Milan");
+		fixtureRepository.save(juveinter);
+		List<Fixture> foundFixtures = fixtureRepository.findAll();
+		assertEquals(1 , foundFixtures.size());
+	}
 }

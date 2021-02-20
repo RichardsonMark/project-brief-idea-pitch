@@ -28,8 +28,7 @@ public class Fixture {
     @Column
     private String awayTeam;
 
-    public Fixture(Long id, League league, String matchStatus, int matchday, int homeTeamScore, int awayTeamScore, String homeTeam, String awayTeam) {
-        this.id = id;
+    public Fixture(League league, String matchStatus, int matchday, int homeTeamScore, int awayTeamScore, String homeTeam, String awayTeam) {
         this.league = league;
         this.matchStatus = matchStatus;
         this.matchday = matchday;
