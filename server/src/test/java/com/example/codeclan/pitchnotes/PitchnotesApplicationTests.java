@@ -106,4 +106,5 @@ class PitchnotesApplicationTests {
 		List<Team> foundTeams = teamRepository.findByLeague(seriea);
 		assertEquals(3, foundTeams.size());
 	}
+	
 }
