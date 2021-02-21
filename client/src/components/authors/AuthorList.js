@@ -1,5 +1,5 @@
 import Author from './Author.js';
-import { Container } from '@material-ui/core';
+import { Container, Box, Grid } from '@material-ui/core';
 
 
 const AuthorList = ({authors}) => {
@@ -10,22 +10,24 @@ const AuthorList = ({authors}) => {
 
 	const authorsNodes = authors.map((author, index) => {
 	  return (
+		<Grid display="flex" flexDirection="row" >
 	    <li key={index} className="component-item">
 	    <div className="component">
 	    <Author author={author} />
 	    </div>
 	    </li>
+		</ Grid>
 	  )
 	})
 
 	return (
-		<Container>
-			<h2>Click on author name to edit</h2>
+		<Box display="flex" flexDirection="column" >
+		<h2>Click on author name to edit</h2>
 
 			<ul className="component-list">
 				{authorsNodes}
 			</ul>
-		</Container>
+		</Box>
 	)
 }
  export default AuthorList;

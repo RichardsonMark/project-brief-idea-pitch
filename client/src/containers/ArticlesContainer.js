@@ -99,9 +99,9 @@ const ArticlesContainer = () => {
                         return <>
                             <h1>Create / Edit Articles</h1>
                             <Button variant="contained" color="primary" href="/articles/new">Create New Article</Button>
-                            <Grid container spacing={4} >
+                            {/* <Grid container spacing={4} > */}
                                 <ArticleList articles={articles} />
-                            </Grid>
+                            {/* </Grid> */}
                         </>
                     }} />
                 </Switch>

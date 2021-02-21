@@ -68,7 +68,7 @@ const AuthorDetail = ({author, articles, onDelete, onUpdate}) => {
     </select>
     <input type="submit" value="Add Article"/>
     </form> */}
-    <Link href= {editUrl}><Button variant="contained" color="primary" type="button"><p>Edit: {author.name}</p></Button></Link>
+   <Button href= {editUrl} variant="contained" color="primary" type="button"><p>Edit: {author.name}</p></Button>
     <Button variant="contained" color="secondary" onClick={handleDelete}><p>Delete: {author.name}</p></Button>
     </div>
   )

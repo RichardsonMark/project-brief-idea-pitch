@@ -1,5 +1,5 @@
 // import { Link } from 'react-router-dom';
-import { Table, Container, Link, Paper } from '@material-ui/core';
+import { Table, Container, Link, Button, Paper } from '@material-ui/core';
 
 
 
@@ -12,11 +12,11 @@ const Author = ({ author }) => {
     const url = "/authors/" + author.id;
 
     return (
-        <Container>
-            <Paper >
-            <Link href={url} className="name"><h3>{author.name}</h3></Link>
+        <Button href={url}>
+            <Paper variant="outlined" elevation={3} >
+            <h3>{author.name}</h3>
             </Paper>
-        </Container>
+        </Button>
     )
 }
 
