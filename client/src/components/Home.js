@@ -2,7 +2,7 @@ import { Container, Grid, Box } from '@material-ui/core';
 import ArticlesReadingContainer from "../containers/ArticlesReadingContainer";
 import LeagueStandings from "../components/footballData/LeagueStandings";
 import FixtureList from "../components/footballData/FixtureList";
-
+import TopScorerList from "../components/footballData/TopScorerList"
 
 const Home = () => (
     <>
@@ -26,7 +26,7 @@ const Home = () => (
                 <h3>Recent Scores</h3>
                 < FixtureList />
                 <h3>Top Scorers</h3>
-                <p>Top Scorers here...</p>
+                < TopScorerList />
             </Container>
         </Box>
     </>

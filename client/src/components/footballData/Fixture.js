@@ -11,7 +11,7 @@ const Fixture = ({ fixture }) => {
     return (
         <Container >
             <Paper elevation={3}>
-            <p>{fixture.league.name}</p>
+            <h4>{fixture.league.name}</h4>
             <p> Status: {fixture.status}</p>
             <p>Matchday: {fixture.matchday}</p>
             <p><img src={fixture.homeTeamCrestUrl} width="30" height="30" alt="{teamStanding.team.name} crest" /> {fixture.homeTeam} {fixture.homeTeamScore} - <img src={fixture.awayTeamCrestUrl} width="30" height="30" alt="{teamStanding.team.name} crest" />  {fixture.awayTeam} {fixture.awayTeamScore}</p> 
