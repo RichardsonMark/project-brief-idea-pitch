@@ -53,8 +53,7 @@ const LeagueStandings = () => {
             <Paper elevation={3}>
                 <TableContainer league={league}  >
 
-                    <img src={league.logo} width="60" height="60" alt="league logo" />
-                    <h1>{league.name} league table</h1>
+                    {/* <h1><img src={league[0].logo} width="60" height="60" alt="league logo" /> {league[0].name} league table</h1> */}
                     <Table >
                         <TableHead>
                             <TableRow>

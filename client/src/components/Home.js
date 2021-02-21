@@ -23,11 +23,18 @@ const Home = () => (
                 <h4>League Table</h4>
                 <h3>Table</h3>
                 <LeagueStandings />
+            </Container>
+        </Box>
+        <Box display="flex" flexDirection="row">
+            <Container>
                 <h3>Recent Scores</h3>
                 < FixtureList />
+            </ Container>
+            <Container>
                 <h3>Top Scorers</h3>
                 < TopScorerList />
-            </Container>
+            </ Container>
+
         </Box>
     </>
 

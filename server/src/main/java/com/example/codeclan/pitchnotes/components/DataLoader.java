@@ -87,10 +87,42 @@ public class DataLoader implements ApplicationRunner {
         teamRepository.save(atalanta);
         Team sassuolo = new Team("US Sassuolo Calcio", "https://crests.football-data.org/471.svg", seriea, 22, "W L W W L", 9, 7, 6, 34, 36, 33, 3, 8 );
         teamRepository.save(sassuolo);
+        Team hellas = new Team("Hellas Verona FC", "https://crests.football-data.org/450.svg", seriea, 22, "W,L,L,W,L", 9, 6, 7, 33, 28, 24, 4, 9 );
+        teamRepository.save(hellas);
+        Team sampdoria = new Team("UC Sampdoria", "https://crests.football-data.org/584.svg", seriea, 22, "W,D,L,W,W", 9, 3, 10, 30, 33, 33, 0, 10 );
+        teamRepository.save(sampdoria);
+        Team genoa = new Team("Genoa CFC", "https://crests.football-data.org/107.svg", seriea, 22, "D,W,W,W,D", 6, 7, 9, 25, 24, 31, -7,11 );
+        teamRepository.save(genoa);
+        Team fiorentina = new Team("ACF Fiorentina", "https://crests.football-data.org/99.svg", seriea, 23, "W,L,L,D,W", 6, 7, 10, 25, 25, 35, -10,12);
+        teamRepository.save(fiorentina);
+        Team spezia = new Team("Spezia Calcio", "https://crests.football-data.org/488.svg", seriea, 23, "L,W,W,L,L", 6, 6, 11, 24, 30, 41, -11, 13 );
+        teamRepository.save(spezia);
+        Team benevento = new Team("Benevento Calcio", "https://crests.football-data.org/1106.svg", seriea, 22, "D,D,L,D,L", 6, 6, 10, 24, 25, 42, -17, 14 );
+        teamRepository.save(benevento);
+        Team udinese = new Team("Udinese Calcio", "https://crests.football-data.org/115.svg", seriea, 22, "L,W,W,D,D", 6, 6, 10, 24, 23, 31, -8, 15 );
+        teamRepository.save(udinese);
+        Team bologna = new Team("Bologna FC 1909", "https://crests.football-data.org/103.svg", seriea, 22, "D,W,L,L,W", 6, 6, 10, 24, 29, 36, -7, 16 );
+        teamRepository.save(bologna);
+        Team torino = new Team("Torino FC", "https://crests.football-data.org/586.svg", seriea, 23, "W,D,D,D,D", 3, 11, 9, 20, 33, 41, -8, 17 );
+        teamRepository.save(torino);
+        Team cagliari = new Team("Cagliari Calcio", "https://crests.football-data.org/104.svg", seriea, 21, "L,L,L,D,L", 3, 6, 14, 15, 24, 41, -17, 18 );
+        teamRepository.save(cagliari);
+        Team parma = new Team("Parma Calcio 1913", "https://crests.football-data.org/112.svg", seriea, 22, "L,L,L,L,D", 2, 7, 13, 13, 15, 43, -28, 19 );
+        teamRepository.save(parma);
+        Team crotone = new Team("FC Crotone", "https://crests.football-data.org/472.svg", seriea, 22, "L,L,L,L,W", 3, 3, 16, 12, 23, 52, -29, 20 );
+        teamRepository.save(crotone);
 
-        Team bayern = new Team("Bayern Munich", "https://crests.football-data.org/5.svg", bundesliga, 22, "W W W D W", 15, 5, 2, 50, 54, 24, 30, 1 );
+        Team bayern = new Team("Bayern Munich", "https://crests.football-data.org/5.svg", bundesliga, 22, "L,D,W,W,W", 15, 4, 3, 49, 62, 31, 31, 1 );
         teamRepository.save(bayern);
-        Team dortmund = new Team("Borussia Dortmund", "https://crests.football-data.org/4.svg", bundesliga, 22, "W W W D W", 15, 5, 2, 50, 54, 24, 30, 1 );
+        Team leipzig = new Team("RB Leipzig", "https://crests.football-data.org/721.svg", bundesliga, 22, "W,W,W,L,W", 13, 5, 3, 44, 39, 18, 21, 2 );
+        teamRepository.save(leipzig);
+        Team wolfsburg = new Team("VfL Wolfsburg", "https://crests.football-data.org/11.svg", bundesliga, 22, "W,D,W,W,W", 11, 9, 2, 42, 35, 19, 16, 3 );
+        teamRepository.save(wolfsburg);
+        Team eintrachtFrankfurt = new Team("Eintracht Frankfurt", "https://crests.football-data.org/19.svg", bundesliga, 22, "W,W,W,W,W", 11, 9, 2, 42, 45, 30, 15, 4 );
+        teamRepository.save(eintrachtFrankfurt);
+        Team bayerLeverkusen = new Team("Bayer 04 Leverkusen", "https://crests.football-data.org/3.svg", bundesliga, 22, "D,D,W,L,L", 10, 7, 5, 40, 40, 24, 16, 5 );
+        teamRepository.save(bayerLeverkusen);
+        Team dortmund = new Team("Borussia Dortmund", "https://crests.football-data.org/4.svg", bundesliga, 22, "W,D,L,W,L", 11, 3, 8, 36, 45, 31, 14, 6 );
         teamRepository.save(dortmund);
 
 
@@ -108,6 +140,21 @@ public class DataLoader implements ApplicationRunner {
         scorerRepository.save(cronaldo);
         Scorer zlatan = new Scorer(seriea, acmilan, "Zlatan Ibrahimovic", "1981-10-03", "Sweden", "Attacker", 14);
         scorerRepository.save(zlatan);
+        Scorer immobile = new Scorer(seriea, lazio, "Ciro Immobile", "1990-02-20", "Italy", "Attacker", 14);
+        scorerRepository.save(immobile);
+        Scorer luisMuriel = new Scorer(seriea, atalanta, "Luis Muriel", "1991-04-16", "Colombia", "Attacker", 13);
+        scorerRepository.save(luisMuriel);
+        Scorer belotti = new Scorer(seriea, torino, "Andrea Belotti", "1993-12-20", "Italy", "Attacker", 11);
+        scorerRepository.save(belotti);
+        Scorer lautaroMartínez = new Scorer(seriea, intermilan, "Lautaro Martínez", "1997-08-22", "Argentina", "Attacker", 11);
+        scorerRepository.save(lautaroMartínez);
+        Scorer joaoPedro = new Scorer(seriea, cagliari, "João Pedro Galvão", "1992-03-09", "Brazil", "Attacker", 11);
+        scorerRepository.save(joaoPedro);
+        Scorer insigne = new Scorer(seriea, napoli, "Lorenzo Insigne", "1991-06-04", "Italy", "Attacker", 10);
+        scorerRepository.save(insigne);
+        Scorer caputo = new Scorer(seriea, sassuolo, "Francesco Caputo", "1987-08-06", "Italy", "Attacker", 10);
+        scorerRepository.save(caputo);
+
         Scorer lewandowski = new Scorer(bundesliga, bayern, "Robert Lewandowski", "1988-08-21", "Poland", "Attacker", 26);
         scorerRepository.save(lewandowski);
         Scorer haaland = new Scorer(bundesliga, dortmund, "Erling Haaland", "2000-07-21", "Norway", "Attacker", 17);

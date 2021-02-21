@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import TopScorer from './TopScorer.js';
-import { Container } from '@material-ui/core';
+import { Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
 
 
 
@@ -39,9 +39,38 @@ const TopScorerList = () => {
 
 	return (
 		<Container>
-			<ul className="component-list">
-				{scorersNodes}
-			</ul>
+<Paper elevation={3}>
+<TableContainer scorers={scorers}  >
+
+    {/* <h1><img src={scorers[0].league.logo} width="60" height="60" alt="league logo" /> {scorers[0].league.name} top scorer</h1> */}
+    <Table >
+        <TableHead>
+            <TableRow>
+                <TableCell>#</TableCell>
+                <TableCell> </TableCell>
+                <TableCell>Goals</TableCell>
+            </TableRow>
+        </TableHead>
+
+        <TableBody>
+            {scorers.map((topScorer) => {
+                // console.log(teamStanding);
+
+                return (
+                    <TableRow key={topScorer.id}>
+                        <TableCell className="clubName">
+                            <img src={topScorer.team.crestUrl} width="50" height="50" alt="{teamStanding.team.name} crest" />
+                        </TableCell>
+                        <TableCell>{topScorer.name}</TableCell>
+                        <TableCell>{topScorer.numberOfGoals}</TableCell>
+                    </TableRow>
+                );
+            })}
+        </TableBody>
+    </Table>
+
+</TableContainer>
+</Paper>
 		</Container>
 	)
 }
