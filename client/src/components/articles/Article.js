@@ -1,6 +1,5 @@
 // import {Link} from 'react-router-dom';
-import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
+import { Container, Link, Paper, Button } from '@material-ui/core';
 
 const Article = ({ article }) => {
 
@@ -11,14 +10,16 @@ const Article = ({ article }) => {
     const url = "/articles/" + article.id;
 
     return (
-        <Container>
+        <Button href={url}>
+            <Paper variant="outlined" elevation={3} >
             <h1><Link href={url} className="name">
                 {article.headline}
             </Link></h1>
             <p>posted: {article.date}</p>
             <p>{article.lede}</p>
             <p>{article.mainStory}</p>
-        </Container>
+            </ Paper>
+        </Button>
     )
 }
 

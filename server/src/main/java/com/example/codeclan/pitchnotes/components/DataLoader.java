@@ -86,13 +86,13 @@ public class DataLoader implements ApplicationRunner {
         teamRepository.save(sassuolo);
 
 
-        Fixture juveinter = new Fixture(seriea, "COMPLETE", 23, 2, 1, "Juventus", "Inter Milan");
+        Fixture juveinter = new Fixture(seriea, "FINISHED", 23, 2, 1, "Juventus", "https://crests.football-data.org/109.svg", "Inter Milan", "https://crests.football-data.org/108.svg");
         fixtureRepository.save(juveinter);
-        Fixture sampmilan = new Fixture(seriea, "COMPLETE", 23, 2, 1, "Sampdoria", "AC Milan");
-        fixtureRepository.save(sampmilan);
-        Fixture atalantaroma = new Fixture(seriea, "IN_PLAY", 23, 2, 1, "Atalanta", "Roma");
+        Fixture napolimilan = new Fixture(seriea, "FINISHED", 23, 2, 1, "Napoli", "https://crests.football-data.org/113.svg", "AC Milan", "https://crests.football-data.org/98.svg");
+        fixtureRepository.save(napolimilan);
+        Fixture atalantaroma = new Fixture(seriea, "IN_PLAY", 23, 2, 1, "Atalanta", "https://crests.football-data.org/102.svg", "Roma", "https://crests.football-data.org/100.svg");
         fixtureRepository.save(atalantaroma);
-        Fixture bayerndortmund = new Fixture(bundesliga, "COMPLETE", 23, 2, 1, "Bayern Munich", "Borussia Dortmund");
+        Fixture bayerndortmund = new Fixture(bundesliga, "FINISHED", 23, 2, 1, "Bayern Munich", "https://crests.football-data.org/5.svg", "Borussia Dortmund", "https://crests.football-data.org/4.svg");
         fixtureRepository.save(bayerndortmund);
     }
 }

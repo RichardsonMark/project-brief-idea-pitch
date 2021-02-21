@@ -1,7 +1,5 @@
 // import { Link } from 'react-router-dom';
-import { Table, Container, Link } from '@material-ui/core';
-// import Container from '@material-ui/core';
-// import Link from '@material-ui/core';
+import { Table, Container, Link, Paper } from '@material-ui/core';
 
 
 
@@ -15,19 +13,9 @@ const Author = ({ author }) => {
 
     return (
         <Container>
+            <Paper >
             <Link href={url} className="name"><h3>{author.name}</h3></Link>
-            {/* <Table>
-                <Table.Body>
-                    {articles.map((authorArticles) => {
-                        return (
-                            <Table.Row key={authorArticles.id}>
-                                <Table.Cell><Link to={url2} className="name">{authorArticles.headline}</Link></Table.Cell>
-                                <Table.Cell>{authorArticles.lede}</Table.Cell>
-                            </Table.Row>
-                        );
-                    })}
-                </Table.Body>
-            </Table> */}
+            </Paper>
         </Container>
     )
 }

@@ -1,4 +1,5 @@
-import './App.css';
+// import './App.css';
+import './components/components.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"; 
 import NavBar from "./components/NavBar";
 import AuthorsContainer from "./containers/AuthorsContainer";

@@ -1,0 +1,12 @@
+body {
+    /* background-image: url("paper.gif"); */
+    background-color:lightsteelblue;
+  }
+
+a.name {
+    text-decoration: none;
+}
+  
+.component-list {
+    list-style-type: none;
+}

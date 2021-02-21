@@ -16,7 +16,7 @@ public class Fixture {
     @JsonIgnoreProperties({"teams"})
     private League league;
     @Column
-    private String matchStatus;
+    private String status;
     @Column
     private int matchday;
     @Column
@@ -26,16 +26,22 @@ public class Fixture {
     @Column
     private String homeTeam;
     @Column
+    private String homeTeamCrestUrl;
+    @Column
     private String awayTeam;
+    @Column
+    private String awayTeamCrestUrl;
 
-    public Fixture(League league, String matchStatus, int matchday, int homeTeamScore, int awayTeamScore, String homeTeam, String awayTeam) {
+    public Fixture(League league, String status, int matchday, int homeTeamScore, int awayTeamScore, String homeTeam, String homeTeamCrestUrl, String awayTeam, String awayTeamCrestUrl) {
         this.league = league;
-        this.matchStatus = matchStatus;
+        this.status = status;
         this.matchday = matchday;
         this.homeTeamScore = homeTeamScore;
         this.awayTeamScore = awayTeamScore;
         this.homeTeam = homeTeam;
+        this.homeTeamCrestUrl = homeTeamCrestUrl;
         this.awayTeam = awayTeam;
+        this.awayTeamCrestUrl = awayTeamCrestUrl;
     }
 
     public Fixture() {
@@ -57,12 +63,12 @@ public class Fixture {
         this.league = league;
     }
 
-    public String getMatchStatus() {
-        return matchStatus;
+    public String getStatus() {
+        return status;
     }
 
-    public void setMatchStatus(String matchStatus) {
-        this.matchStatus = matchStatus;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public int getMatchday() {
@@ -103,5 +109,21 @@ public class Fixture {
 
     public void setAwayTeam(String awayTeam) {
         this.awayTeam = awayTeam;
+    }
+
+    public String getHomeTeamCrestUrl() {
+        return homeTeamCrestUrl;
+    }
+
+    public void setHomeTeamCrestUrl(String homeTeamCrestUrl) {
+        this.homeTeamCrestUrl = homeTeamCrestUrl;
+    }
+
+    public String getAwayTeamCrestUrl() {
+        return awayTeamCrestUrl;
+    }
+
+    public void setAwayTeamCrestUrl(String awayTeamCrestUrl) {
+        this.awayTeamCrestUrl = awayTeamCrestUrl;
     }
 }
