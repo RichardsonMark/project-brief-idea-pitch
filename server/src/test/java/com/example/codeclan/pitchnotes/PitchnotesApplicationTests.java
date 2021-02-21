@@ -28,6 +28,9 @@ class PitchnotesApplicationTests {
 	@Autowired
 	FixtureRepository fixtureRepository;
 
+	@Autowired
+	ScorerRepository scorerRepository;
+
 	@Test
 	void contextLoads() {
 	}
@@ -130,9 +133,35 @@ class PitchnotesApplicationTests {
 		fixtureRepository.save(napolimilan);
 		Fixture atalantaroma = new Fixture(seriea, "IN_PLAY", 23, 2, 1, "Atalanta", "https://crests.football-data.org/102.svg", "Roma", "https://crests.football-data.org/100.svg");
 		fixtureRepository.save(atalantaroma);
-		Fixture bayerndortmund = new Fixture(bundesliga, "FINISHED", 23, 2, 1, "Bayern Munich", "", "Borussia Dortmund", "");
+		Fixture bayerndortmund = new Fixture(bundesliga, "FINISHED", 23, 2, 1, "Bayern Munich", "https://crests.football-data.org/5.svg", "Borussia Dortmund", "https://crests.football-data.org/4.svg");
 		fixtureRepository.save(bayerndortmund);
 		List<Fixture> foundLeagueFixtures = fixtureRepository.findByLeagueAndStatusIgnoreCase(seriea,"FINISHED");
 		assertEquals(2, foundLeagueFixtures.size());
+	}
+
+	@Test
+	public void canFindTopScorers() {
+		League seriea = new League("Serie A", "https://crests.football-data.org/SA.svg");
+		leagueRepository.save(seriea);
+		League bundesliga = new League("Bundesliga", "https://crests.football-data.org/BL1.svg");
+		leagueRepository.save(bundesliga);
+		Team juventus = new Team("Juventus", "https://crests.football-data.org/109.svg", seriea, 21, "L W W W L", 12, 6, 3, 42, 41, 19, 22,  4);
+		teamRepository.save(juventus);
+		Team acmilan = new Team("AC Milan", "https://crests.football-data.org/98.svg", seriea, 22, "L W W L W", 15, 4, 3, 49, 45, 25, 20, 2 );
+		teamRepository.save(acmilan);
+		Team bayern = new Team("Bayern Munich", "https://crests.football-data.org/5.svg", bundesliga, 22, "W W W D W", 15, 5, 2, 50, 54, 24, 30, 1 );
+		teamRepository.save(bayern);
+		Team dortmund = new Team("Borussia Dortmund", "https://crests.football-data.org/4.svg", bundesliga, 22, "W W W D W", 15, 5, 2, 50, 54, 24, 30, 1 );
+		teamRepository.save(dortmund);
+		Scorer cronaldo = new Scorer(seriea, juventus, "Cristiano Ronaldo", "1985-02-05", "Portugal", "Attacker", 16);
+		scorerRepository.save(cronaldo);
+		Scorer zlatan = new Scorer(seriea, acmilan, "Zlatan Ibrahimovic", "1981-10-03", "Sweden", "Attacker", 14);
+		scorerRepository.save(zlatan);
+		Scorer lewandowski = new Scorer(bundesliga, bayern, "Robert Lewandowski", "1988-08-21", "Poland", "Attacker", 26);
+		scorerRepository.save(lewandowski);
+		Scorer haaland = new Scorer(bundesliga, dortmund, "Erling Haaland", "2000-07-21", "Norway", "Attacker", 17);
+		scorerRepository.save(haaland);
+		List<Scorer> foundLeagueScorers = scorerRepository.findByLeague(seriea);
+		assertEquals(2, foundLeagueScorers.size());
 	}
 }

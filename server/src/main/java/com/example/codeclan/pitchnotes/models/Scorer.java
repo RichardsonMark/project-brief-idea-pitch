@@ -5,15 +5,19 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 @Entity
-@Table(name="players")
-public class Player {
+@Table(name="scorers")
+public class Scorer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
     @JoinColumn(name = "leagues_id", nullable = false)
-    @JsonIgnoreProperties({"players"})
+    @JsonIgnoreProperties({"teams"})
+    private League league;
+    @ManyToOne
+    @JoinColumn(name = "teams_id", nullable = false)
+    @JsonIgnoreProperties({"scorers"})
     private Team team;
     @Column
     private String name;
@@ -26,7 +30,8 @@ public class Player {
     @Column
     private int numberOfGoals;
 
-    public Player(Team team, String name, String dateOfBirth, String nationality, String position, int numberOfGoals) {
+    public Scorer(League league, Team team, String name, String dateOfBirth, String nationality, String position, int numberOfGoals) {
+        this.league = league;
         this.team = team;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -35,7 +40,7 @@ public class Player {
         this.numberOfGoals = numberOfGoals;
     }
 
-    public Player() {
+    public Scorer() {
     }
 
     public Long getId() {
@@ -44,6 +49,14 @@ public class Player {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public League getLeague() {
+        return league;
+    }
+
+    public void setLeague(League league) {
+        this.league = league;
     }
 
     public Team getTeam() {
