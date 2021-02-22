@@ -8,7 +8,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 @RestController
 public class ArticleController {
@@ -61,6 +64,11 @@ public class ArticleController {
     @GetMapping(value = "/articles/read/{date}")
     public ResponseEntity getArticleReadingVersionByDate(@PathVariable String date) {
         return new ResponseEntity<>(articleRepository.findByDateIgnoreCase(date), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/articles/read/{categoryLeague}")
+    public ResponseEntity<Set<String>> findAllCategoryLeagues() {
+        return new ResponseEntity<>(new TreeSet<>(Arrays.asList("Serie A", "Bundesliga", "La Liga"), HttpStatus.OK);
     }
 
     @PostMapping(value = "/articles")

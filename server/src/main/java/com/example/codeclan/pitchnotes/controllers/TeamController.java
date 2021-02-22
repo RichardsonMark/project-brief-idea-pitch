@@ -22,7 +22,7 @@ public class TeamController {
     }
 
     @GetMapping(value = "/teams/{league}")
-    public ResponseEntity canGetAllTeamsInALeague(@RequestParam("league") League league) {
+    public ResponseEntity canGetAllTeamsInALeague(@PathVariable League league) {
         return new ResponseEntity(teamRepository.findByLeague(league), HttpStatus.OK);
     }
 }

@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import ArticleReadingList from '../components/articles/ArticleReadingList';
 import ArticleReadingDetail from '../components/articles/ArticleReadingDetail';
 import Request from '../helpers/request';
-import { Grid, Button } from '@material-ui/core';
+import { Grid, Button, Paper } from '@material-ui/core';
+import { Pagination } from '@material-ui/lab';
+
 
 
 
@@ -25,11 +27,7 @@ const ArticlesReadingContainer = () => {
         requestAll()
     }, [])
 
-    const findArticleById = function (id) {
-        return articles.find((article) => {
-            return article.id === parseInt(id);
-        })
-    }
+
 
 
 
@@ -38,28 +36,17 @@ const ArticlesReadingContainer = () => {
         return null
     }
     return (
-        <Router>
-            <>
-                <Switch>
 
-                    <Route exact path="/articles/read/:id" render={(props) => {
-                        const id = props.match.params.id;
-                        const article = findArticleById(id);
-                        return <ArticleReadingDetail article={article}
+        <>
+            {/* <h1>Read Articles</h1> */}
+            <Grid container spacing={10}>
+                <ArticleReadingList articles={articles} />
+                {/* <Paper elevation={3}>
+                <Pagination count={10} />
+                </Paper> */}
+            </Grid>
+        </>
 
-                        />
-                    }} />
-                    <Route render={() => {
-                        return <>
-                            {/* <h1>Read Articles</h1> */}
-                            <Grid container spacing={10}>
-                                <ArticleReadingList articles={articles} />
-                            </Grid>
-                        </>
-                    }} />
-                </Switch>
-            </>
-        </Router>
     )
 }
 
