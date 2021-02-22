@@ -9,19 +9,13 @@ const Home = () => (
         <Box display="flex" flexDirection="row">
             <Container>
                 <h4>Pitchnotes</h4>
-                <Container>
                     <h3>New Stories</h3>
                     < ArticlesReadingContainer />
-
-                </Container>
-                {/* <Container>
-                    <h3>Top/Most Read Stories</h3>
-                    <p>Top/Most Read Stories here...</p>
-                </Container> */}
+                {/* <h3>Top/Most Read Stories</h3>
+                    <p>Top/Most Read Stories here...</p> */}
             </Container>
             <Container>
                 <h4>League Table</h4>
-                <h3>Table</h3>
                 <LeagueStandings />
             </Container>
         </Box>
@@ -34,7 +28,6 @@ const Home = () => (
                 <h3>Top Scorers</h3>
                 < TopScorerList />
             </ Container>
-
         </Box>
     </>
 

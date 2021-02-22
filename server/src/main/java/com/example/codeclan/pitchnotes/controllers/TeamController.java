@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -21,7 +22,7 @@ public class TeamController {
     }
 
     @GetMapping(value = "/teams/{league}")
-    public ResponseEntity canGetAllTeamsInALeague(@PathVariable League league) {
+    public ResponseEntity canGetAllTeamsInALeague(@RequestParam("league") League league) {
         return new ResponseEntity(teamRepository.findByLeague(league), HttpStatus.OK);
     }
 }

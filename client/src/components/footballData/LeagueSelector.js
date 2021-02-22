@@ -6,7 +6,7 @@ const LeagueSelector = ({ changeLeague, label }) => {
         <div>
           <label>{label}</label>
           <select
-            name="leagues"
+            name="league"
             onChange={(event) => changeLeague(event.target.value)}
           >
             <option value="0">Serie A</option>

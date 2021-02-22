@@ -7,16 +7,18 @@ import LeagueSelector from "./LeagueSelector"
 
 const LeagueStandings = () => {
     const [standings, setStandings] = useState([]);
-    const [league, setLeague] = useState(0);
+    const [league, setLeague] = useState([]);
 
 
     const getStandings = () => {
-        fetch("http://localhost:8080/api/leagues")
+        fetch(`http://localhost:8080/api/teams/${league}`)
             .then((res) => {
                 return res.json()
             })
             .then((data) => {
-                setStandings(data.[0].teams);
+                setStandings(data);    
+                console.log(data);            
+                // setStandings(league.[0].teams);
                 // console.log(league[0].teams);
             })
     };
@@ -46,14 +48,11 @@ const LeagueStandings = () => {
 
     return (
         <>
-            <LeagueSelector
-                changeLeague={(league) => setLeague(league)}
-                label="Choose league to see info: "
-            />
+            <LeagueSelector changeLeague={(league) => setLeague(league)} label="Choose league to see info: " />
             <Paper elevation={3}>
                 <TableContainer league={league}  >
 
-                    {/* <h1><img src={league[0].logo} width="60" height="60" alt="league logo" /> {league[0].name} league table</h1> */}
+                    <h1><img src={league.logo} width="60" height="60" alt="league logo" /> {league.name} league table</h1>
                     <Table >
                         <TableHead>
                             <TableRow>
@@ -79,7 +78,7 @@ const LeagueStandings = () => {
                                     <TableRow key={teamStanding.id}>
                                         <TableCell>{teamStanding.position}</TableCell>
                                         <TableCell className="clubName">
-                                            <img src={teamStanding.crestUrl} width="50" height="50" alt="{teamStanding.team.name} crest" />
+                                            <img src={teamStanding.crestUrl} width="20" height="20" alt="{teamStanding.team.name} crest" />
                                         </TableCell>
                                         <TableCell>{teamStanding.name}</TableCell>
                                         <TableCell>{teamStanding.playedGames}</TableCell>

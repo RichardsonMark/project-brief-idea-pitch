@@ -13,7 +13,7 @@ const ArticlesReadingContainer = () => {
 
     const requestAll = function () {
         const request = new Request();
-        const articlePromise = request.get('http://localhost:8080/api/articles')
+        const articlePromise = request.get('http://localhost:8080/api/articles/read')
 
         Promise.all([articlePromise])
             .then((data) => {
@@ -52,7 +52,7 @@ const ArticlesReadingContainer = () => {
                     <Route render={() => {
                         return <>
                             {/* <h1>Read Articles</h1> */}
-                            <Grid container spacing={4}>
+                            <Grid container spacing={10}>
                                 <ArticleReadingList articles={articles} />
                             </Grid>
                         </>

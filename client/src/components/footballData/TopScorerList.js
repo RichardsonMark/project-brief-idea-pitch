@@ -59,7 +59,7 @@ const TopScorerList = () => {
                 return (
                     <TableRow key={topScorer.id}>
                         <TableCell className="clubName">
-                            <img src={topScorer.team.crestUrl} width="50" height="50" alt="{teamStanding.team.name} crest" />
+                            <img src={topScorer.team.crestUrl} width="30" height="30" alt="{teamStanding.team.name} crest" />
                         </TableCell>
                         <TableCell>{topScorer.name}</TableCell>
                         <TableCell>{topScorer.numberOfGoals}</TableCell>

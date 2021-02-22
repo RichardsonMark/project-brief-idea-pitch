@@ -10,14 +10,14 @@ const ArticleReading = ({ article }) => {
     const url = "/articles/read/" + article.id;
 
     return (
-        <Container>
+        <Container disableGutters={true}>
             <Paper elevation={3}>
                 <h1><Link href={url} className="name">
                     {article.headline}
                 </Link></h1>
-                <p>posted: {article.date}</p>
+                <p>posted: {article.date} - by: {article.author.name}. category:{article.categoryLeague}</p>
                 <p>{article.lede}</p>
-                <p>{article.mainStory}</p>
+                {/* <p>{article.mainStory}</p> */}
             </Paper>
         </Container>
     )

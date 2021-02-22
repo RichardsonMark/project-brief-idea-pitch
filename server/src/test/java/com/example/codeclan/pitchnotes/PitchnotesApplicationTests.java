@@ -164,4 +164,11 @@ class PitchnotesApplicationTests {
 		List<Scorer> foundLeagueScorers = scorerRepository.findByLeague(seriea);
 		assertEquals(2, foundLeagueScorers.size());
 	}
+
+	@Test
+	public void canFindAllArticlesAndOrderByDate() {
+		List<Article> foundArticles = articleRepository.findByOrderByDateAsc();
+		assertEquals(6, foundArticles.size());
+	}
+
 }
