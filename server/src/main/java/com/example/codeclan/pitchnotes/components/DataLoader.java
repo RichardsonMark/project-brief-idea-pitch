@@ -60,6 +60,13 @@ public class DataLoader implements ApplicationRunner {
         articleRepository.save(eredivisie1);
         Article premierLeague1 = new Article("Headline goes here", janeDoe, "Premier League", "Lede - byline goes here", "Story - Main story lorum ipsum", "17-02-2021 11:18:32", 10);
         articleRepository.save(premierLeague1);
+        Article seriea1_2 = new Article("Headline goes here", markRichardson, "Serie A", "Lede - byline goes here", "Story - Main story lorum ipsum", "11-02-2021 11:18:32", 35);
+        articleRepository.save(seriea1_2);
+        Article laliga1_2 = new Article("Headline goes here", aNAuthor, "La Liga", "Lede - byline goes here", "Story - Main story lorum ipsum", "13-02-2021 11:18:32", 30);
+        articleRepository.save(laliga1_2);
+        Article bundesliga1_2 = new Article("Headline goes here", alanSmithee, "Bundesliga", "Lede - byline goes here", "Story - Main story lorum ipsum", "14-02-2021 11:18:32", 25);
+        articleRepository.save(bundesliga1_2);
+
 
 
         // team and league info - creating own api for MVP (may bring in real api for extension)

@@ -66,10 +66,10 @@ public class ArticleController {
         return new ResponseEntity<>(articleRepository.findByDateIgnoreCase(date), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/articles/read/{categoryLeague}")
-    public ResponseEntity<Set<String>> findAllCategoryLeagues() {
-        return new ResponseEntity<>(new TreeSet<>(Arrays.asList("Serie A", "Bundesliga", "La Liga"), HttpStatus.OK);
-    }
+//    @GetMapping(value = "/articles/read/{categoryLeague}")
+//    public ResponseEntity<Set<String>> findAllCategoryLeagues() {
+//        return new ResponseEntity<>(new TreeSet<>(Arrays.asList("Serie A", "Bundesliga", "La Liga"), HttpStatus.OK);
+//    }
 
     @PostMapping(value = "/articles")
     public ResponseEntity<Article> createArticle(@RequestBody Article article) {

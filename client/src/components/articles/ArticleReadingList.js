@@ -24,16 +24,7 @@ const ArticleReadingList = ({articles}) => {
 	return (
 		<Container>
 			{/* <h2>Click headline to read article</h2> */}
-			<Box>
-				<Paper elevation={3}>
-					<div >
-						<form noValidate autoComplete="off">
-							<TextField id="outlined-basic" label="search" variant="outlined" size="small" />
-							<Button variant="outlined">Search articles</Button>
-						</form>
-					</div>
-				</Paper>
-			</Box>
+
 			<ul className="component-list">
 				{articlesNodes}
 			</ul>

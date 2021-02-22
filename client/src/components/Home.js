@@ -9,8 +9,8 @@ const Home = () => (
     <>
         <Box display="flex" flexDirection="row">
             <Container>
-                <h4>Pitchnotes</h4>
-                    <h3>New Stories</h3>
+                <h4>Pitchnotes News</h4>
+                    {/* <h3>New Stories</h3> */}
                     < ArticlesReadingContainer />
                 {/* <h3>Top/Most Read Stories</h3>
                     <p>Top/Most Read Stories here...</p> */}
