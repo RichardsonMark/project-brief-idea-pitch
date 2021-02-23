@@ -3,6 +3,8 @@ import ArticlesReadingContainer from "../containers/ArticlesReadingContainer";
 import LeagueStandings from "../components/footballData/LeagueStandings";
 import FixtureList from "../components/footballData/FixtureList";
 import TopScorerList from "../components/footballData/TopScorerList"
+import LeagueSelector from './footballData/LeagueSelector';
+import LeagueList from './footballData/LeagueList';
 
 
 const Home = () => (
@@ -17,7 +19,7 @@ const Home = () => (
             </Container>
             <Container  maxWidth="md">
                 <h4>League Table</h4>
-                <LeagueStandings />
+                <LeagueList />
             </Container>
         </Box>
         <Box display="flex" flexDirection="row">

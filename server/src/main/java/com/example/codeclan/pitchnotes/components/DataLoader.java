@@ -154,8 +154,8 @@ public class DataLoader implements ApplicationRunner {
         Fixture juvCro = new Fixture(seriea, "IN_PLAY", 23, 3, 0, "Juventus", "https://crests.football-data.org/109.svg", "Crotone", "https://crests.football-data.org/472.svg");
         fixtureRepository.save(juvCro);
 
-        Fixture bayerndortmund = new Fixture(bundesliga, "FINISHED", 23, 2, 1, "Bayern Munich", "https://crests.football-data.org/5.svg", "Borussia Dortmund", "https://crests.football-data.org/4.svg");
-        fixtureRepository.save(bayerndortmund);
+//        Fixture bayerndortmund = new Fixture(bundesliga, "FINISHED", 23, 2, 1, "Bayern Munich", "https://crests.football-data.org/5.svg", "Borussia Dortmund", "https://crests.football-data.org/4.svg");
+//        fixtureRepository.save(bayerndortmund);
 
 
         Scorer cronaldo = new Scorer(seriea, juventus, "Cristiano Ronaldo", "1985-02-05", "Portugal", "Attacker", 16);
@@ -177,10 +177,10 @@ public class DataLoader implements ApplicationRunner {
         Scorer caputo = new Scorer(seriea, sassuolo, "Francesco Caputo", "1987-08-06", "Italy", "Attacker", 10);
         scorerRepository.save(caputo);
 
-        Scorer lewandowski = new Scorer(bundesliga, bayern, "Robert Lewandowski", "1988-08-21", "Poland", "Attacker", 26);
-        scorerRepository.save(lewandowski);
-        Scorer haaland = new Scorer(bundesliga, dortmund, "Erling Haaland", "2000-07-21", "Norway", "Attacker", 17);
-        scorerRepository.save(haaland);
+//        Scorer lewandowski = new Scorer(bundesliga, bayern, "Robert Lewandowski", "1988-08-21", "Poland", "Attacker", 26);
+//        scorerRepository.save(lewandowski);
+//        Scorer haaland = new Scorer(bundesliga, dortmund, "Erling Haaland", "2000-07-21", "Norway", "Attacker", 17);
+//        scorerRepository.save(haaland);
 
     }
 }

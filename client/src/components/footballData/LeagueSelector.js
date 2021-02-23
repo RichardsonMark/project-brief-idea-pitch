@@ -1,25 +1,25 @@
+import { useState, useEffect } from "react";
+import LeagueStandings from "./LeagueStandings";
 
 
-const LeagueSelector = ({ changeLeague, label }) => {
-    return (
-      <form>
-        <div>
-          <label>{label}</label>
-          <select
-            name="league"
-            onChange={(event) => changeLeague(event.target.value)}
-          >
-            <option value="0">Serie A</option>
-            <option value="1">Bundesliga</option>
-            <option value="2">La Liga</option>
-            <option value="3">Ligue 1</option>
-            <option value="4">Premier League</option>
-            <option value="5">Eredivisie</option>
-          </select>
-        </div>
-      </form>
-    );
-};
+const LeagueSelector = ({leaguelist, onLeagueSelected}) => {
+
+
+  const handleChange = event => {
+    onLeagueSelected(event.target.value)
+  }
+
+return (
+    <select defaultValue="" onChange={handleChange}>
+      <option value="" disabled>Choose a league</option>
+      {leaguelist.map(leaguelist => {
+        return (
+          <option key={leaguelist.id} value={leaguelist.id}>{leaguelist.name}</option>
+        )
+      })}
+    </select>
+)
+}
 
 
 export default LeagueSelector;

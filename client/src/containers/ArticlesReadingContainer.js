@@ -23,7 +23,7 @@ const ArticlesReadingContainer = () => {
         Promise.all([articlePromise])
             .then((data) => {
                 setArticles(data[0]);
-                console.log(data[0]);
+                // console.log(data[0]);
             })
     }
 
@@ -39,7 +39,7 @@ const ArticlesReadingContainer = () => {
             )
         );
     }, [search, articles]);
-    console.log(articles);
+    // console.log(articles);
 
 
 
@@ -51,11 +51,11 @@ const ArticlesReadingContainer = () => {
             {/* <h1>Read Articles</h1> */}
             <Grid >
                 {/* <Box elevation={3}> */}
-                    <ul>
+                    <div>
                         <form noValidate autoComplete="off">
                             <TextField id="outlined-basic" label="filter by category/league" variant="outlined" fullWidth onChange={(e) => setSearch(e.target.value)} />
                         </form>
-                    </ul>
+                    </div>
                 {/* </Box> */}
                 {/* <Grid container spacing={0}> */}
                     <Paper elevation={3}>
@@ -73,7 +73,7 @@ const ArticlesReadingContainer = () => {
                     </Paper>
                 {/* </Grid> */}
                 <Paper elevation={3}>
-                <Pagination count={10} />
+                <Pagination count={8} color="primary" shape="rounded" size="large" showFirstButton showLastButton />
                 </Paper>
             </Grid>
         </>

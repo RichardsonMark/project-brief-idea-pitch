@@ -171,4 +171,20 @@ class PitchnotesApplicationTests {
 		assertEquals(6, foundArticles.size());
 	}
 
+//	@Test
+//	public void canFindTopScorersByLeague() {
+//		League seriea = new League("Serie A", "https://crests.football-data.org/SA.svg");
+//		leagueRepository.save(seriea);
+//		Team juventus = new Team("Juventus", "https://crests.football-data.org/109.svg", seriea, 21, "L W W W L", 12, 6, 3, 42, 41, 19, 22,  4);
+//		teamRepository.save(juventus);
+//		Team acmilan = new Team("AC Milan", "https://crests.football-data.org/98.svg", seriea, 22, "L W W L W", 15, 4, 3, 49, 45, 25, 20, 2 );
+//		teamRepository.save(acmilan);
+//		Scorer cronaldo = new Scorer(seriea, juventus, "Cristiano Ronaldo", "1985-02-05", "Portugal", "Attacker", 16);
+//		scorerRepository.save(cronaldo);
+//		Scorer zlatan = new Scorer(seriea, acmilan, "Zlatan Ibrahimovic", "1981-10-03", "Sweden", "Attacker", 14);
+//		scorerRepository.save(zlatan);
+//		List<Scorer> foundLeagueScorers = leagueRepository.findByLeagueId((long)1);
+//		assertEquals(2, foundLeagueScorers.size());
+//	}
+
 }

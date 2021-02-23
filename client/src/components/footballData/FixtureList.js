@@ -15,7 +15,7 @@ const FixtureList = () => {
       })
       .then((data) => {
           setFixtures(data);
-          console.log(data);
+        //   console.log(data);
       })
   };
   

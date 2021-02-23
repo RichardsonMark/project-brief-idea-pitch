@@ -15,7 +15,7 @@ const TopScorerList = () => {
       })
       .then((data) => {
           setScorers(data);
-          console.log(data);
+        //   console.log(data);
       })
   };
   

@@ -22,6 +22,7 @@ public class League {
     private List<Team> teams;
 
 
+
     public League(String name, String logo) {
         this.name = name;
         this.logo = logo;

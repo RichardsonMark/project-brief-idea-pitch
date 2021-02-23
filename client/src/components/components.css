@@ -20,7 +20,7 @@ a.name {
 }
 
 .header {
-    background-color: rgb(193, 193, 188);
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
     padding:20px;
     padding-bottom: 35px;
@@ -32,6 +32,6 @@ a.name {
 } */
 
 .footer {
-    background-color: rgb(193, 193, 188);
+    background-color: rgb(255, 255, 255);
     padding:20px;
 }
