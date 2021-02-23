@@ -41,14 +41,14 @@ const LeagueList = () => {
   return (
   <>
     <div className="leaguechoice">
-        <h4>Choose a league from the list to see the league table</h4>
+        {/* <h4>Choose a league from the list to see the league table</h4> */}
         <LeagueSelector leaguelist={leaguelist} onLeagueSelected={handleLeagueSelected} />
         <div>
         {/* <LeagueInfo leagueinfo={selectedLeague}  /> */}
         </div>
     </div>
     <div className="standing">
-        <LeagueStandings league={selectedLeague} onLeagueSelected={handleLeagueSelected} />
+        <LeagueStandings league={selectedLeague}  />
     </div>
   </>
   )

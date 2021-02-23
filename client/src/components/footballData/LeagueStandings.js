@@ -5,7 +5,7 @@ import { Container, Table, TableBody, TableCell, TableContainer, TableHead, Tabl
 import LeagueSelector from "./LeagueSelector"
 
 
-const LeagueStandings = ({  }) => {
+const LeagueStandings = ({ selectedLeague }) => {
     const [standings, setStandings] = useState([]);
     // const [leagues, setLeagues] = useState([]);
     const [league, setLeague] = useState([1]);
@@ -30,23 +30,7 @@ const LeagueStandings = ({  }) => {
     }, []);
       console.log(standings);
 
-
-    // const getLeagues = () => {
-    //     fetch("http://localhost:8080/api/leagues")
-    //         .then((res) => {
-    //             return res.json()
-    //         })
-    //         .then((data) => {
-    //             setLeagues(data);
-    //             // console.log(data);
-    //         })
-    // };
-
-    // useEffect(() => {
-    //     getLeagues();
-    // }, []);
-    // //   console.log(league);
-    // console.log(leagues);
+      console.log(selectedLeague);
 
     if (!league) {
         return null
@@ -57,7 +41,7 @@ const LeagueStandings = ({  }) => {
             <Paper elevation={3}>
                 <TableContainer league={league}  >
 
-                    {/* <h1><img src={league.logo} width="60" height="60" alt="league logo" /> {league.name} league table</h1> */}
+                    <h1><img src={league.logo} width="60" height="60" alt="league logo" /> {league.name} league table</h1>
                     <Table >
                         <TableHead>
                             <TableRow>
@@ -77,7 +61,7 @@ const LeagueStandings = ({  }) => {
 
                         <TableBody>
                             {standings.map((teamStanding) => {
-                                console.log(teamStanding);
+                                // console.log(teamStanding);
 
                                 return (
                                     <TableRow key={teamStanding.id}>
