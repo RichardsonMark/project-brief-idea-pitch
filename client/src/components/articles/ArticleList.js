@@ -10,22 +10,21 @@ const ArticleList = ({ articles }) => {
 
 	const articlesNodes = articles.map((article, index) => {
 		return (
-			<Grid display="flex" flexDirection="row" >
 				<li key={index} className="component-item">
 					<div className="component">
 						<Article article={article} />
 					</div>
 				</li>
-			</Grid>
-
 		)
 	})
 
 	return (
-		<Box display="flex" flexDirection="column" >
-			<h2>Click headline to edit article</h2>
-			<Box className="component-list">{articlesNodes}</Box>
+		<>
+		<h2>Click article to edit / delete</h2>
+		<Box display="flex" flexDirection="row" flexWrap="wrap" justifyContent="flex-start">
+			{articlesNodes}
 		</Box>
+		</>
 	)
 }
 export default ArticleList;

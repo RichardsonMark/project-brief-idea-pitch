@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Fixture from './Fixture.js';
-import { Container } from '@material-ui/core';
+import { Container, Box } from '@material-ui/core';
 
 
 
@@ -40,7 +40,9 @@ const FixtureList = () => {
 	return (
 		<Container>
 			<ul className="component-list">
+			<Box display="flex" flexDirection="row" flexWrap="wrap" justifyContent="center" alignItems="center" padding="5">
 				{fixturesNodes}
+			</Box>
 			</ul>
 		</Container>
 	)

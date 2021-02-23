@@ -10,24 +10,21 @@ const AuthorList = ({authors}) => {
 
 	const authorsNodes = authors.map((author, index) => {
 	  return (
-		<Grid display="flex" flexDirection="row" >
 	    <li key={index} className="component-item">
 	    <div className="component">
 	    <Author author={author} />
 	    </div>
 	    </li>
-		</ Grid>
 	  )
 	})
 
 	return (
-		<Box display="flex" flexDirection="column" >
-		<h2>Click on author name to edit</h2>
-
-			<ul className="component-list">
+		<>
+				<h2>Click on author name to edit</h2>
+		<Box display="flex" flexDirection="row" >
 				{authorsNodes}
-			</ul>
 		</Box>
+		</>
 	)
 }
  export default AuthorList;

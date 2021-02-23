@@ -14,3 +14,7 @@ a.name {
 .component-item {
     list-style-type: none;
 }
+
+.MuiButton-label {
+    text-decoration: none;
+}

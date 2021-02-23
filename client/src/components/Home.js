@@ -8,26 +8,27 @@ import TopScorerList from "../components/footballData/TopScorerList"
 const Home = () => (
     <>
         <Box display="flex" flexDirection="row">
-            <Container>
+            <Container  maxWidth="lg">
                 <h4>Pitchnotes News</h4>
                     {/* <h3>New Stories</h3> */}
                     < ArticlesReadingContainer />
                 {/* <h3>Top/Most Read Stories</h3>
                     <p>Top/Most Read Stories here...</p> */}
             </Container>
-            <Container>
+            <Container  maxWidth="md">
                 <h4>League Table</h4>
                 <LeagueStandings />
             </Container>
         </Box>
         <Box display="flex" flexDirection="row">
-            <Container>
+            <Container disableGutters maxWidth="lg">
                 <h3>Recent Scores</h3>
                 < FixtureList />
             </ Container>
-            <Container>
+            <Container maxWidth="sm">
                 <h3>Top Scorers</h3>
-                < TopScorerList />
+                <Box>
+                < TopScorerList /></Box>
             </ Container>
         </Box>
     </>

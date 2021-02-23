@@ -133,12 +133,27 @@ public class DataLoader implements ApplicationRunner {
         teamRepository.save(dortmund);
 
 
-        Fixture juveinter = new Fixture(seriea, "FINISHED", 23, 2, 1, "Juventus", "https://crests.football-data.org/109.svg", "Inter Milan", "https://crests.football-data.org/108.svg");
-        fixtureRepository.save(juveinter);
-        Fixture napolimilan = new Fixture(seriea, "FINISHED", 23, 2, 1, "Napoli", "https://crests.football-data.org/113.svg", "AC Milan", "https://crests.football-data.org/98.svg");
-        fixtureRepository.save(napolimilan);
-        Fixture atalantaroma = new Fixture(seriea, "IN_PLAY", 23, 2, 1, "Atalanta", "https://crests.football-data.org/102.svg", "Roma", "https://crests.football-data.org/100.svg");
-        fixtureRepository.save(atalantaroma);
+        Fixture fioSpezia = new Fixture(seriea, "FINISHED", 23, 3, 0, "Fiorentina", "https://crests.football-data.org/99.svg", "Spezia Calcio", "https://crests.football-data.org/488.svg");
+        fixtureRepository.save(fioSpezia);
+        Fixture parmaUdi = new Fixture(seriea, "FINISHED", 23, 2, 2, "Parma", "https://crests.football-data.org/112.svg", "Udinese", "https://crests.football-data.org/115.svg");
+        fixtureRepository.save(parmaUdi);
+        Fixture cagTor = new Fixture(seriea, "FINISHED", 23, 0, 1, "Cagliari", "https://crests.football-data.org/104.svg", "Torino", "https://crests.football-data.org/586.svg");
+        fixtureRepository.save(cagTor);
+        Fixture milanInter = new Fixture(seriea, "FINISHED", 23, 0, 3, "Milan", "https://crests.football-data.org/98.svg", "Inter Milan", "https://crests.football-data.org/108.svg");
+        fixtureRepository.save(milanInter);
+        Fixture lazioSamp = new Fixture(seriea, "FINISHED", 23, 1, 0, "Lazio", "https://crests.football-data.org/110.svg", "Sampdoria", "https://crests.football-data.org/584.svg");
+        fixtureRepository.save(lazioSamp);
+        Fixture ataNap = new Fixture(seriea, "FINISHED", 23, 4, 2, "Atalanta", "https://crests.football-data.org/102.svg", "Napoli", "https://crests.football-data.org/113.svg");
+        fixtureRepository.save(ataNap);
+        Fixture genVer = new Fixture(seriea, "FINISHED", 23, 2, 2, "Genoa", "https://crests.football-data.org/107.svg", "Hellas Verona", "https://crests.football-data.org/450.svg");
+        fixtureRepository.save(genVer);
+        Fixture beneRoma = new Fixture(seriea, "FINISHED", 23, 0, 0, "Benevento", "https://crests.football-data.org/1106.svg", "Roma", "https://crests.football-data.org/100.svg");
+        fixtureRepository.save(beneRoma);
+        Fixture sassBol = new Fixture(seriea, "IN_PLAY", 23, 1, 1, "Sassuolo", "https://crests.football-data.org/471.svg", "Bologna", "https://crests.football-data.org/103.svg");
+        fixtureRepository.save(sassBol);
+        Fixture juvCro = new Fixture(seriea, "IN_PLAY", 23, 3, 0, "Juventus", "https://crests.football-data.org/109.svg", "Crotone", "https://crests.football-data.org/472.svg");
+        fixtureRepository.save(juvCro);
+
         Fixture bayerndortmund = new Fixture(bundesliga, "FINISHED", 23, 2, 1, "Bayern Munich", "https://crests.football-data.org/5.svg", "Borussia Dortmund", "https://crests.football-data.org/4.svg");
         fixtureRepository.save(bayerndortmund);
 
