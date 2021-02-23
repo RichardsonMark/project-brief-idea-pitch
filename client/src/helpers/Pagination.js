@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-function usePagination(articles, itemsPerPage) {
+function usePagination(filteredArticles, itemsPerPage) {
   const [currentPage, setCurrentPage] = useState(1);
-  const maxPage = Math.ceil(articles.length / itemsPerPage);
+  const maxPage = Math.ceil(filteredArticles.length / itemsPerPage);
 
   function currentData() {
     const begin = (currentPage - 1) * itemsPerPage;
     const end = begin + itemsPerPage;
-    return articles.slice(begin, end);
+    return filteredArticles.slice(begin, end);
   }
 
   function next() {

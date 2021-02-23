@@ -46,8 +46,8 @@ const ArticlesReadingContainer = () => {
     let [page, setPage] = useState(1);
     const PER_PAGE = 8;
   
-    const count = Math.ceil(articles.length / PER_PAGE);
-    const _DATA = usePagination(articles, PER_PAGE);
+    const count = Math.ceil(filteredArticles.length / PER_PAGE);
+    const _DATA = usePagination(filteredArticles, PER_PAGE);
   
     const handleChange = (e, p) => {
       setPage(p);
