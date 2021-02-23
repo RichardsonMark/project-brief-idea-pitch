@@ -47,36 +47,36 @@ const ArticlesReadingContainer = () => {
         return null
     }
     return (
-
         <>
             {/* <h1>Read Articles</h1> */}
-            <Grid container spacing={8}>
-                <Box elevation={3}>
+            <Grid >
+                {/* <Box elevation={3}> */}
                     <ul>
                         <form noValidate autoComplete="off">
-                            <TextField id="outlined-basic" label="filter by category/league" variant="outlined" fullWidth size="small" onChange={(e) => setSearch(e.target.value)} />
+                            <TextField id="outlined-basic" label="filter by category/league" variant="outlined" fullWidth onChange={(e) => setSearch(e.target.value)} />
                         </form>
                     </ul>
-                </Box>
-                <Grid container spacing={0}>
+                {/* </Box> */}
+                {/* <Grid container spacing={0}> */}
                     <Paper elevation={3}>
-                        {filteredArticles.map((article, index) => (
-                                <ul>
-                                    <li key={index} className="component-item">
-                                <div className="component">
+                        {filteredArticles.map((article) => (
+                            <>
+                                 {/* <ul> */}
+                                    {/* <li key={article.id} className="component-item">
+                                <div className="component"> */}
                                     <ArticleReading article={article} />
-                                </div>
-                                    </li>
-                                </ul>
+                                {/* </div>
+                                    </li> */}
+                                {/* </ul> */}
+                            </>
                         ))}
                     </Paper>
-                </Grid>
+                {/* </Grid> */}
                 <Paper elevation={3}>
                 <Pagination count={10} />
                 </Paper>
             </Grid>
         </>
-
     )
 }
 

@@ -1,6 +1,6 @@
 body {
     /* background-image: url("paper.gif"); */
-    background-color:lightsteelblue;
+    background-color:rgb(113, 142, 180);
   }
 
 a.name {
@@ -17,4 +17,21 @@ a.name {
 
 .MuiButton-label {
     text-decoration: none;
+}
+
+.header {
+    background-color: rgb(193, 193, 188);
+    border-radius: 5px;
+    padding:20px;
+    padding-bottom: 35px;
+}
+
+/* .nav-bar {
+    background-color:mediumseagreen;
+    padding:10px;
+} */
+
+.footer {
+    background-color: rgb(193, 193, 188);
+    padding:20px;
 }
