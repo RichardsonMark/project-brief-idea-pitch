@@ -8,7 +8,7 @@ import LeagueSelector from "./LeagueSelector"
 const LeagueStandings = ({ leaguelist, onLeagueSelected }) => {
     const [standings, setStandings] = useState([]);
     // const [leagues, setLeagues] = useState([]);
-    const [league, setLeague] = useState([]);
+    const [league, setLeague] = useState([1]);
 
 
 
@@ -43,11 +43,7 @@ const LeagueStandings = ({ leaguelist, onLeagueSelected }) => {
     }
     return (
         <>
-            {/* <LeagueSelector league={league} 
-                            onChange={event => {const { value } = event.target; setLeague(value) }} 
-                            label="Choose league to see info: " /> */}
-                    <select 
-         defaultValue="" onChange={handleChange}>
+        <select defaultValue="" onChange={handleChange}>
           <option value="" disabled>Choose a league</option>
           {leaguelist.map(league => {
             return (
@@ -56,9 +52,10 @@ const LeagueStandings = ({ leaguelist, onLeagueSelected }) => {
           })}
         </select>
             <Paper elevation={3}>
-                <TableContainer league={league}  >
+                <TableContainer  >
 
-                    <h1><img src={league.logo} width="60" height="60" alt="league logo" /> {league.name} league table</h1>
+                    {/* <h1>{league.name} league table</h1> */}
+
                     <Table >
                         <TableHead>
                             <TableRow>

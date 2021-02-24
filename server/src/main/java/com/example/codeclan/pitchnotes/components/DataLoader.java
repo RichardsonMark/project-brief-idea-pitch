@@ -72,9 +72,9 @@ public class DataLoader implements ApplicationRunner {
         // team and league info - creating own api for MVP (may bring in real api for extension)
         League seriea = new League("Serie A", "https://crests.football-data.org/SA.svg");
         leagueRepository.save(seriea);
-        League bundesliga = new League("Bundesliga", "https://crests.football-data.org/BL1.svg");
+        League bundesliga = new League("Bundesliga", "");
         leagueRepository.save(bundesliga);
-        League laliga = new League("La Liga", "https://crests.football-data.org/SL1.svg");
+        League laliga = new League("La Liga", "");
         leagueRepository.save(laliga);
 
 
@@ -131,6 +131,19 @@ public class DataLoader implements ApplicationRunner {
         teamRepository.save(bayerLeverkusen);
         Team dortmund = new Team("Borussia Dortmund", "https://crests.football-data.org/4.svg", bundesliga, 22, "W,D,L,W,L", 11, 3, 8, 36, 45, 31, 14, 6 );
         teamRepository.save(dortmund);
+
+        Team barca = new Team("FC Barcelona", "https://crests.football-data.org/81.svg", laliga, 22, "L,D,W,W,W", 15, 4, 3, 49, 62, 31, 31, 1 );
+        teamRepository.save(barca);
+        Team realmadrid = new Team("Real Madrid CF", "https://crests.football-data.org/86.svg", laliga, 22, "W,W,W,L,W", 13, 5, 3, 44, 39, 18, 21, 2 );
+        teamRepository.save(realmadrid);
+        Team atleticomadrid = new Team("Club Atlético de Madrid", "https://crests.football-data.org/78.svg", laliga, 22, "W,D,W,W,W", 11, 9, 2, 42, 35, 19, 16, 3 );
+        teamRepository.save(atleticomadrid);
+        Team realsociedad = new Team("Real Sociedad de Fútbol", "https://crests.football-data.org/92.svg", laliga, 22, "W,W,W,W,W", 11, 9, 2, 42, 45, 30, 15, 4 );
+        teamRepository.save(realsociedad);
+        Team villarreal = new Team("Villarreal CF", "https://crests.football-data.org/94.svg", laliga, 22, "D,D,W,L,L", 10, 7, 5, 40, 40, 24, 16, 5 );
+        teamRepository.save(villarreal);
+        Team valencia = new Team("Valencia CF", "https://crests.football-data.org/95.svg", laliga, 22, "W,D,L,W,L", 11, 3, 8, 36, 45, 31, 14, 6 );
+        teamRepository.save(valencia);
 
 
         Fixture fioSpezia = new Fixture(seriea, "FINISHED", 23, 3, 0, "Fiorentina", "https://crests.football-data.org/99.svg", "Spezia Calcio", "https://crests.football-data.org/488.svg");
