@@ -4,17 +4,18 @@ import LeagueStandings from "./LeagueStandings";
 
 const LeagueSelector = ({leaguelist, onLeagueSelected}) => {
 
+  const [leagues, setLeague] = useState([]);
 
-  const handleChange = event => {
-    onLeagueSelected(event.target.value)
-  }
+
+  const handleChange = event => {const { value } = event.target; setLeague(value) }
 
 return (
-    <select defaultValue="" onChange={handleChange}>
+    <select 
+     defaultValue="" onChange={handleChange}>
       <option value="" disabled>Choose a league</option>
-      {leaguelist.map(leaguelist => {
+      {leaguelist.map(league => {
         return (
-          <option key={leaguelist.id} value={leaguelist.id}>{leaguelist.name}</option>
+          <option key={league.id} value={league.id}>{league.name}</option>
         )
       })}
     </select>

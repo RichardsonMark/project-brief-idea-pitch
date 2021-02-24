@@ -5,10 +5,10 @@ import { Container, Table, TableBody, TableCell, TableContainer, TableHead, Tabl
 import LeagueSelector from "./LeagueSelector"
 
 
-const LeagueStandings = ({ selectedLeague }) => {
+const LeagueStandings = ({ leaguelist, onLeagueSelected }) => {
     const [standings, setStandings] = useState([]);
     // const [leagues, setLeagues] = useState([]);
-    const [league, setLeague] = useState([1]);
+    const [league, setLeague] = useState([]);
 
 
 
@@ -27,17 +27,34 @@ const LeagueStandings = ({ selectedLeague }) => {
 
     useEffect(() => {
         getStandings();
-    }, []);
+    }, [league]);
       console.log(standings);
 
-      console.log(selectedLeague);
+      console.log(league);
+
+
+      const handleChange = event => {const { value } = event.target; setLeague(value) }
+    
+
+
 
     if (!league) {
         return null
     }
     return (
         <>
-            {/* <LeagueSelector leagues={leagues} changeLeague={(leagues) => setLeagues(leagues)} label="Choose league to see info: " /> */}
+            {/* <LeagueSelector league={league} 
+                            onChange={event => {const { value } = event.target; setLeague(value) }} 
+                            label="Choose league to see info: " /> */}
+                    <select 
+         defaultValue="" onChange={handleChange}>
+          <option value="" disabled>Choose a league</option>
+          {leaguelist.map(league => {
+            return (
+              <option key={league.id} value={league.id}>{league.name}</option>
+            )
+          })}
+        </select>
             <Paper elevation={3}>
                 <TableContainer league={league}  >
 
