@@ -38,7 +38,7 @@ const FixtureList = () => {
 	})
 
 	return (
-		<Container>
+		<Container fixed>
 			<ul className="component-list">
 			<Box display="flex" flexDirection="row" flexWrap="wrap" justifyContent="center" alignItems="center" padding="5">
 				{fixturesNodes}

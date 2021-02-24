@@ -86,21 +86,17 @@ if (!authors.length === 0){
     <Paper elevation={3}>
     <form onSubmit={handleSubmit}>
     <p>Headline: <input type="text" style={{ width:"320px", height:"45px" }} placeholder="Headline" name="headline" onChange={handleChange} value={stateArticle.headline} /></p>
-    <p>Lede: <input type="text" style={{ width:"350px", height:"45px" }} placeholder="Lede" name="lede" onChange={handleChange} value={stateArticle.lede} /></p>
+    <p>Lede: <textarea type="text" rows="4" cols="44" placeholder="Lede" name="lede" onChange={handleChange} value={stateArticle.lede} /></p>
     <p>Category / League: <input type="text" style={{ width:"245px", height:"45px" }} placeholder="CategoryLeague" name="categoryLeague" onChange={handleChange} value={stateArticle.categoryLeague} /></p>
-    {/* <Slate
-      editor={editor}
-      value={stateArticle.mainStory}
-      onChange={handleChange}
-      >
+    {/* <Slate editor={editor} value={stateArticle.mainStory} onChange={handleChange} >
           <Editable />
     </Slate> */}
-    <p>Main Story: <textarea type="text" style={{ width:"310px", height:"90px" }} placeholder="MainStory" name="mainStory" onChange={handleChange} value={stateArticle.mainStory} /></p>
+    <p>Main Story: <textarea type="text" rows="10" cols="38" placeholder="MainStory" name="mainStory" onChange={handleChange} value={stateArticle.mainStory} /></p>
     <p>Date / Time created:<input type="text" style={{ width:"240px", height:"45px" }} placeholder="Date" name="date" onChange={handleChange} value={stateArticle.date} /></p>
-    <select name="author" style={{ width:"150px", height:"45px" }} onChange={handleAuthor} defaultValue={findAuthorIndex() || 'select-author'}>
+    <p>Author: <select name="author" style={{ width:"150px", height:"45px" }} onChange={handleAuthor} defaultValue={findAuthorIndex() || 'select-author'}>
     <option disabled value='select-author'>Select an author</option>
         {authorOptions}
-    </select>
+    </select></p>
     <Button variant="contained" color="primary" type="submit">Save</Button>
     </form>
     </Paper>

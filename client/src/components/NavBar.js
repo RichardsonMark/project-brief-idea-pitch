@@ -1,5 +1,5 @@
 // import { Link, useHistory } from "react-router-dom";
-import { Button, ButtonGroup } from '@material-ui/core';
+import { Button, ButtonGroup, Paper, Container } from '@material-ui/core';
 
 
 
@@ -11,6 +11,8 @@ const NavBar = () => {
     // }
 
     return (
+        <Container fixed maxWidth="sm">
+        <Paper elevation={3}>
         <div className="nav-bar">
             <ButtonGroup size="large" color="primary" aria-label="outlined primary button group">
                 <Button color="default" href="/">Home</Button>
@@ -22,6 +24,8 @@ const NavBar = () => {
             <Button variant="contained" color="secondary"><Link to="/articles">Create/Edit Articles</Link></Button> */}
             {/* <Button variant="contained" onClick={goBack}>Back</Button> */}
         </div>
+        </Paper>
+        </Container>
     );
 }
 
