@@ -1,8 +1,7 @@
 import { React, useState, useEffect } from "react";
 // import './components.css';
 // import { Image, Segment, Table } from "semantic-ui-react";
-import { Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
-import LeagueSelector from "./LeagueSelector"
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
 
 
 const LeagueStandings = ({ leaguelist, onLeagueSelected }) => {

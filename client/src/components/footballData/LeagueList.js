@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import LeagueSelector from "./LeagueSelector"
 import LeagueStandings from "./LeagueStandings"
 
 
@@ -41,13 +40,6 @@ const LeagueList = () => {
   return (
   <>
     <div className="leaguechoice">
-        {/* <h4>Choose a league from the list to see the league table</h4> */}
-        {/* <LeagueSelector leaguelist={leaguelist} onLeagueSelected={handleLeagueSelected} /> */}
-        <div>
-        {/* <LeagueInfo leagueinfo={selectedLeague}  /> */}
-        </div>
-    </div>
-    <div className="standing">
         <LeagueStandings league={selectedLeague} leaguelist={leaguelist} onLeagueSelected={handleLeagueSelected} />
     </div>
   </>

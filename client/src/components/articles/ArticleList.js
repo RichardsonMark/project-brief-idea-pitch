@@ -1,5 +1,5 @@
 import Article from './Article.js';
-import { Container, Grid, Box } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 
 
 const ArticleList = ({ articles }) => {

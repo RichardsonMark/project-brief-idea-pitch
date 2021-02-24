@@ -1,9 +1,6 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from "react";
-import ArticleReadingList from '../components/articles/ArticleReadingList';
-import ArticleReadingDetail from '../components/articles/ArticleReadingDetail';
 import Request from '../helpers/request';
-import { Grid, Button, Paper, Box, TextField, Container } from '@material-ui/core';
+import { Grid, Paper, TextField, Container } from '@material-ui/core';
 import { Pagination } from '@material-ui/lab';
 import ArticleReading from '../components/articles/ArticleReading';
 import usePagination from "../helpers/Pagination";
@@ -44,14 +41,14 @@ const ArticlesReadingContainer = () => {
 
     // Material-ui pagination
     let [page, setPage] = useState(1);
-    const PER_PAGE = 7;
-  
+    const PER_PAGE = 6;
+
     const count = Math.ceil(filteredArticles.length / PER_PAGE);
     const _DATA = usePagination(filteredArticles, PER_PAGE);
-  
+
     const handleChange = (e, p) => {
-      setPage(p);
-      _DATA.jump(p);
+        setPage(p);
+        _DATA.jump(p);
     };
 
 
@@ -60,35 +57,26 @@ const ArticlesReadingContainer = () => {
     }
     return (
         <>
-            {/* <h1>Read Articles</h1> */}
             <Grid >
-            <Container fixed>
-
-                {/* <Box elevation={3}> */}
+                <Container fixed>
                     <div>
                         <form noValidate autoComplete="off">
                             <TextField id="outlined-basic" label="filter by category/league" variant="outlined" fullWidth onChange={(e) => setSearch(e.target.value)} />
                         </form>
                     </div>
-                {/* </Box> */}
-                {/* <Grid container spacing={0}> */}
+
                     <Paper elevation={3}>
                         {_DATA.currentData().map((article) => (
                             <>
-                                 {/* <ul> */}
-                                    {/* <li key={article.id} className="component-item">
-                                <div className="component"> */}
-                                    <ArticleReading article={article} />
-                                {/* </div>
-                                    </li> */}
-                                {/* </ul> */}
+                                <ArticleReading article={article} />
+
                             </>
                         ))}
                     </Paper>
-                {/* </Grid> */}
-                <Paper elevation={3}>
-                <Pagination count={count} color="primary" shape="rounded" size="large" showFirstButton showLastButton page={page} onChange={handleChange} />
-                </Paper>
+
+                    <Paper elevation={3}>
+                        <Pagination count={count} color="primary" shape="rounded" size="large" showFirstButton showLastButton page={page} onChange={handleChange} />
+                    </Paper>
                 </Container>
             </Grid>
         </>

@@ -1,7 +1,6 @@
 import React from 'react';
 import ArticleReading from "./ArticleReading";
-// import {Link} from 'react-router-dom';
-import { Button, Link, Paper, Container } from '@material-ui/core';
+import { Paper, Container } from '@material-ui/core';
 
 
 

@@ -1,4 +1,3 @@
-// import {Link} from 'react-router-dom';
 import {Container, Paper} from '@material-ui/core';
 
 const Fixture = ({ fixture }) => {

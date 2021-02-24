@@ -42,7 +42,6 @@ const TopScorerList = () => {
 <Paper elevation={3}>
 <TableContainer scorers={scorers}  >
 
-    {/* <h1><img src={scorers[0].league.logo} width="60" height="60" alt="league logo" /> {scorers[0].league.name} top scorer</h1> */}
     <Table >
         <TableHead>
             <TableRow>

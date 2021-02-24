@@ -1,9 +1,7 @@
-import { Container, Grid, Box, Paper, Typography } from '@material-ui/core';
+import { Container, Box, Paper } from '@material-ui/core';
 import ArticlesReadingContainer from "../containers/ArticlesReadingContainer";
-import LeagueStandings from "../components/footballData/LeagueStandings";
 import FixtureList from "../components/footballData/FixtureList";
 import TopScorerList from "../components/footballData/TopScorerList"
-import LeagueSelector from './footballData/LeagueSelector';
 import LeagueList from './footballData/LeagueList';
 
 

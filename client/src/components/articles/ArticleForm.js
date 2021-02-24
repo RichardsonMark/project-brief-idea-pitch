@@ -1,7 +1,5 @@
 import React, {useState, useEffect, useMemo } from 'react';
 import { Button, Paper, Container } from '@material-ui/core';
-// import { Slate, Editable, withReact } from 'slate-react';
-// import { createEditor } from 'slate'
 
 
 
@@ -17,11 +15,6 @@ const [stateArticle, setStateArticle] = useState(
         date: "",
     }
 )
-
-
-// Adding Slate text editor
-// const editor = useMemo(() => withReact(createEditor()), [])
-// const [value, setValue] = useState([])
 
 
 const handleChange = function(event){
@@ -88,9 +81,6 @@ if (!authors.length === 0){
     <p>Headline: <input type="text" style={{ width:"320px", height:"45px" }} placeholder="Headline" name="headline" onChange={handleChange} value={stateArticle.headline} /></p>
     <p>Lede: <textarea type="text" rows="4" cols="44" placeholder="Lede" name="lede" onChange={handleChange} value={stateArticle.lede} /></p>
     <p>Category / League: <input type="text" style={{ width:"245px", height:"45px" }} placeholder="CategoryLeague" name="categoryLeague" onChange={handleChange} value={stateArticle.categoryLeague} /></p>
-    {/* <Slate editor={editor} value={stateArticle.mainStory} onChange={handleChange} >
-          <Editable />
-    </Slate> */}
     <p>Main Story: <textarea type="text" rows="10" cols="38" placeholder="MainStory" name="mainStory" onChange={handleChange} value={stateArticle.mainStory} /></p>
     <p>Date / Time created:<input type="text" style={{ width:"240px", height:"45px" }} placeholder="Date" name="date" onChange={handleChange} value={stateArticle.date} /></p>
     <p>Author: <select name="author" style={{ width:"150px", height:"45px" }} onChange={handleAuthor} defaultValue={findAuthorIndex() || 'select-author'}>

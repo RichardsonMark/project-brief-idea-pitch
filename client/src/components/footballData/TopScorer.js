@@ -1,8 +1,8 @@
-import {Container, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@material-ui/core';
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import { React, useState, useEffect } from "react";
 
 
-const TopScorer = ({  }) => {
+const TopScorer = ({ }) => {
     const [scorer, setScorer] = useState(0);
 
 
@@ -30,47 +30,39 @@ const TopScorer = ({  }) => {
 
     return (
         <>
-        {/* <Container >
             <Paper elevation={3}>
-            <h4><img src={scorer.team.crestUrl} width="20" height="20" alt="{scorer.team.name} crest" /> {scorer.name} - {scorer.numberOfGoals}</h4>
+                <TableContainer scorer={scorer}  >
+
+
+                    <Table >
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>#</TableCell>
+                                <TableCell> </TableCell>
+                                <TableCell>Goals</TableCell>
+                            </TableRow>
+                        </TableHead>
+
+                        <TableBody>
+                            {scorer.map((topScorer) => {
+                                // console.log(teamStanding);
+
+                                return (
+                                    <TableRow key={topScorer.id}>
+                                        <TableCell className="clubName">
+                                            <img src={topScorer.team.crestUrl} width="50" height="50" alt="{teamStanding.team.name} crest" />
+                                        </TableCell>
+                                        <TableCell>{topScorer.name}</TableCell>
+                                        <TableCell>{topScorer.numberOfGoals}</TableCell>
+                                    </TableRow>
+                                );
+                            })}
+                        </TableBody>
+                    </Table>
+
+                </TableContainer>
             </Paper>
-        </Container> */}
-
-
-<Paper elevation={3}>
-<TableContainer scorer={scorer}  >
-
-    {/* <img src={topScorer.league.logo} width="60" height="60" alt="league logo" />
-    <h1>{topScorer.league.name} top scorer</h1> */}
-    <Table >
-        <TableHead>
-            <TableRow>
-                <TableCell>#</TableCell>
-                <TableCell> </TableCell>
-                <TableCell>Goals</TableCell>
-            </TableRow>
-        </TableHead>
-
-        <TableBody>
-            {scorer.map((topScorer) => {
-                // console.log(teamStanding);
-
-                return (
-                    <TableRow key={topScorer.id}>
-                        <TableCell className="clubName">
-                            <img src={topScorer.team.crestUrl} width="50" height="50" alt="{teamStanding.team.name} crest" />
-                        </TableCell>
-                        <TableCell>{topScorer.name}</TableCell>
-                        <TableCell>{topScorer.numberOfGoals}</TableCell>
-                    </TableRow>
-                );
-            })}
-        </TableBody>
-    </Table>
-
-</TableContainer>
-</Paper>
-</>
+        </>
     )
 }
 
