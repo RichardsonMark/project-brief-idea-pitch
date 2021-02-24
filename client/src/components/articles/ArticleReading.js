@@ -15,7 +15,7 @@ const ArticleReading = ({ article }) => {
                 <h1><Link href={url} className="name">
                     {article.headline}
                 </Link></h1>
-                <p>posted: {article.date} - by: {article.author.name}. category:{article.categoryLeague}</p>
+                <p>posted: {article.date} - by: {article.author.name}. Category:<strong>{article.categoryLeague}</strong></p>
                 <p>{article.lede}</p>
                 {/* <p>{article.mainStory}</p> */}
             </Paper>

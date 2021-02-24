@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import ArticleReadingList from '../components/articles/ArticleReadingList';
 import ArticleReadingDetail from '../components/articles/ArticleReadingDetail';
 import Request from '../helpers/request';
-import { Grid, Button, Paper, Box, TextField } from '@material-ui/core';
+import { Grid, Button, Paper, Box, TextField, Container } from '@material-ui/core';
 import { Pagination } from '@material-ui/lab';
 import ArticleReading from '../components/articles/ArticleReading';
 import usePagination from "../helpers/Pagination";
@@ -44,7 +44,7 @@ const ArticlesReadingContainer = () => {
 
     // Material-ui pagination
     let [page, setPage] = useState(1);
-    const PER_PAGE = 8;
+    const PER_PAGE = 7;
   
     const count = Math.ceil(filteredArticles.length / PER_PAGE);
     const _DATA = usePagination(filteredArticles, PER_PAGE);
@@ -62,6 +62,8 @@ const ArticlesReadingContainer = () => {
         <>
             {/* <h1>Read Articles</h1> */}
             <Grid >
+            <Container fixed>
+
                 {/* <Box elevation={3}> */}
                     <div>
                         <form noValidate autoComplete="off">
@@ -87,6 +89,7 @@ const ArticlesReadingContainer = () => {
                 <Paper elevation={3}>
                 <Pagination count={count} color="primary" shape="rounded" size="large" showFirstButton showLastButton page={page} onChange={handleChange} />
                 </Paper>
+                </Container>
             </Grid>
         </>
     )
