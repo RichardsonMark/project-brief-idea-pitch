@@ -58,7 +58,7 @@ public class ArticleController {
 
     @GetMapping(value = "/articles/read")
     public ResponseEntity getArticleReadingVersionOrderByNewest() {
-        return new ResponseEntity<>(articleRepository.findByOrderByDateAsc(), HttpStatus.OK);
+        return new ResponseEntity<>(articleRepository.findByOrderByDateDesc(), HttpStatus.OK);
     }
 
     @GetMapping(value = "/articles/read/{date}")

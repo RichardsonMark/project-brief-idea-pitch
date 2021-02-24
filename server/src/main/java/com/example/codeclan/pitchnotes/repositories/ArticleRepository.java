@@ -12,7 +12,7 @@ public interface ArticleRepository extends JpaRepository<Article, Long> {
     List<Article> findByDateIgnoreCase(String date);
     List<Article> findByCategoryLeagueIgnoreCase(String categoryLeague);
     List<Article> findByCategoryLeagueIgnoreCaseAndDate(String categoryLeague, String date);
-    List<Article> findByOrderByDateAsc();
+    List<Article> findByOrderByDateDesc();
 
 
 

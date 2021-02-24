@@ -167,8 +167,8 @@ class PitchnotesApplicationTests {
 
 	@Test
 	public void canFindAllArticlesAndOrderByDate() {
-		List<Article> foundArticles = articleRepository.findByOrderByDateAsc();
-		assertEquals(6, foundArticles.size());
+		List<Article> foundArticles = articleRepository.findByOrderByDateDesc();
+		assertEquals(18, foundArticles.size());
 	}
 
 //	@Test

@@ -48,11 +48,11 @@ public class DataLoader implements ApplicationRunner {
         Author janeDoe = new Author("Jane Doe");
         authorRepository.save(janeDoe);
 
-        Article seriea1 = new Article("Headline - Serie A article 1", markRichardson, "Serie A", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ", "11-02-2021 11:18:32", 35);
+        Article seriea1 = new Article("Headline - Serie A article", markRichardson, "Serie A", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ", "11-02-2021 11:18:32", 35);
         articleRepository.save(seriea1);
-        Article laliga1 = new Article("Headline - La Liga article 1", aNAuthor, "La Liga", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "13-02-2021 11:18:32", 30);
+        Article laliga1 = new Article("Headline - La Liga article", aNAuthor, "La Liga", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "13-02-2021 11:18:32", 30);
         articleRepository.save(laliga1);
-        Article bundesliga1 = new Article("Headline - Bundesliga article 1", alanSmithee, "Bundesliga", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "14-02-2021 11:18:32", 25);
+        Article bundesliga1 = new Article("Headline - Bundesliga article", alanSmithee, "Bundesliga", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "14-02-2021 11:18:32", 25);
         articleRepository.save(bundesliga1);
         Article ligueUn1 = new Article("Headline - Ligue 1 article", cordwainerBird, "Ligue 1", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "15-02-2021 11:18:32", 20);
         articleRepository.save(ligueUn1);
@@ -60,12 +60,30 @@ public class DataLoader implements ApplicationRunner {
         articleRepository.save(eredivisie1);
         Article premierLeague1 = new Article("Headline - Premier League article", janeDoe, "Premier League", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "17-02-2021 11:18:32", 10);
         articleRepository.save(premierLeague1);
-        Article seriea1_2 = new Article("Headline - Serie A article 2", markRichardson, "Serie A", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "11-02-2021 11:18:32", 35);
-        articleRepository.save(seriea1_2);
-        Article laliga1_2 = new Article("Headline - La Liga article 2", aNAuthor, "La Liga", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "13-02-2021 11:18:32", 30);
-        articleRepository.save(laliga1_2);
+        Article seriea2 = new Article("Headline - Serie A article 2", markRichardson, "Serie A", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "11-02-2021 11:18:32", 35);
+        articleRepository.save(seriea2);
+        Article laliga2 = new Article("Headline - La Liga article 2", aNAuthor, "La Liga", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "13-02-2021 11:18:32", 30);
+        articleRepository.save(laliga2);
         Article bundesliga1_2 = new Article("Headline - Bundesliga article 2", alanSmithee, "Bundesliga", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "14-02-2021 11:18:32", 25);
         articleRepository.save(bundesliga1_2);
+        Article seriea3 = new Article("Headline - Serie A article 3", markRichardson, "Serie A", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ", "11-02-2021 11:18:32", 35);
+        articleRepository.save(seriea3);
+        Article laliga3 = new Article("Headline - La Liga article 3", aNAuthor, "La Liga", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "13-02-2021 11:18:32", 30);
+        articleRepository.save(laliga3);
+        Article bundesliga3 = new Article("Headline - Bundesliga article 3", alanSmithee, "Bundesliga", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "14-02-2021 11:18:32", 25);
+        articleRepository.save(bundesliga3);
+        Article ligueUn2 = new Article("Headline - Ligue 1 article 2", cordwainerBird, "Ligue 1", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "15-02-2021 11:18:32", 20);
+        articleRepository.save(ligueUn2);
+        Article eredivisie2 = new Article("Headline - Eredivisie article 2", johnDoe, "Eredivisie", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "16-02-2021 11:18:32", 15);
+        articleRepository.save(eredivisie2);
+        Article premierLeague2 = new Article("Headline - Premier League article 2", janeDoe, "Premier League", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "17-02-2021 11:18:32", 10);
+        articleRepository.save(premierLeague2);
+        Article seriea4 = new Article("Headline - Serie A article 4", markRichardson, "Serie A", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "11-02-2021 11:18:32", 35);
+        articleRepository.save(seriea4);
+        Article laliga4 = new Article("Headline - La Liga article 4", aNAuthor, "La Liga", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "13-02-2021 11:18:32", 30);
+        articleRepository.save(laliga4);
+        Article bundesliga4 = new Article("Headline - Bundesliga article 4", alanSmithee, "Bundesliga", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Story - Main story lorum ipsum", "14-02-2021 11:18:32", 25);
+        articleRepository.save(bundesliga4);
 
 
 
