@@ -76,6 +76,8 @@ public class DataLoader implements ApplicationRunner {
         leagueRepository.save(bundesliga);
         League laliga = new League("La Liga", "");
         leagueRepository.save(laliga);
+        League eredivisie = new League("Eredivisie", "");
+        leagueRepository.save(eredivisie);
 
 
         Team intermilan = new Team("Inter Milan", "https://crests.football-data.org/108.svg", seriea, 22, "W W W D W", 15, 5, 2, 50, 54, 24, 30, 1 );
@@ -144,6 +146,19 @@ public class DataLoader implements ApplicationRunner {
         teamRepository.save(villarreal);
         Team valencia = new Team("Valencia CF", "https://crests.football-data.org/95.svg", laliga, 22, "W,D,L,W,L", 11, 3, 8, 36, 45, 31, 14, 6 );
         teamRepository.save(valencia);
+
+        Team ajax = new Team("AFC Ajax", "https://crests.football-data.org/678.svg", eredivisie, 22, "W,D,L,W,L", 11, 3, 8, 36, 45, 31, 14, 1 );
+        teamRepository.save(ajax);
+        Team psv = new Team("PSV Eindhoven", "https://crests.football-data.org/674.svg", eredivisie, 22, "W,W,W,W,W", 11, 9, 2, 42, 45, 30, 15, 2 );
+        teamRepository.save(psv);
+        Team feyenoord = new Team("Feyenoord Rotterdam", "https://crests.football-data.org/675.svg", eredivisie, 22, "D,D,W,L,L", 10, 7, 5, 40, 40, 24, 16, 3 );
+        teamRepository.save(feyenoord);
+        Team alkmaar = new Team("AZ Alkmaar", "https://crests.football-data.org/682.svg", eredivisie, 22, "W,W,W,W,W", 11, 9, 2, 42, 45, 30, 15, 4 );
+        teamRepository.save(alkmaar);
+        Team spartarotterdam = new Team("Sparta Rotterdam", "https://crests.football-data.org/6806.svg", eredivisie, 22, "D,D,W,L,L", 10, 7, 5, 40, 40, 24, 16, 5 );
+        teamRepository.save(spartarotterdam);
+        Team vitesse = new Team("SBV Vitesse Arnhem", "https://crests.football-data.org/679.svg", eredivisie, 22, "W,D,L,W,L", 11, 3, 8, 36, 45, 31, 14, 6 );
+        teamRepository.save(vitesse);
 
 
         Fixture fioSpezia = new Fixture(seriea, "FINISHED", 23, 3, 0, "Fiorentina", "https://crests.football-data.org/99.svg", "Spezia Calcio", "https://crests.football-data.org/488.svg");
